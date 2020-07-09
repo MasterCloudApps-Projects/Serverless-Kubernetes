@@ -1,0 +1,11 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: knative-rest
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+      - image: docker.io/oillescas/knative-rest
+
