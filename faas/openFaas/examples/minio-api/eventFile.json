@@ -1,0 +1,25 @@
+{
+  "body": {},
+  "headers": {
+    "host": "minio-api.openfaas-fn.svc.cluster.local:8080",
+    "user-agent": "PostmanRuntime/7.26.2",
+    "transfer-encoding": "chunked",
+    "accept": "*/*",
+    "accept-encoding": "gzip, deflate, br",
+    "cache-control": "no-cache",
+    "content-type": "multipart/form-data; boundary=--------------------------287644677736099598561125",
+    "postman-token": "c586421a-de5d-40b1-9112-44ac1fc9e14a",
+    "x-b3-parentspanid": "045291ff7bad7684",
+    "x-b3-sampled": "1",
+    "x-b3-spanid": "6eb6b18a8a5a1143",
+    "x-b3-traceid": "56cb2b67280c2d3bf84824cb198b38e5",
+    "x-forwarded-client-cert": "By=spiffe://cluster.local/ns/openfaas-fn/sa/default;Hash=55249e351226630799a07caebc3763bd4d46c4e6e6c483cfa247a2df89c0ce74;Subject=\"\";URI=spiffe://cluster.local/ns/openfaas/sa/openfaas-controller",
+    "x-forwarded-for": "127.0.0.1:45158",
+    "x-forwarded-host": "192.168.64.13:31112",
+    "x-forwarded-proto": "http",
+    "x-request-id": "25eeec12-01cf-9508-b380-51236dcc495a"
+  },
+  "method": "POST",
+  "query": {},
+  "path": "/prueba"
+}

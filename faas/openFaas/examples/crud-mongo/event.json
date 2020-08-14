@@ -1,0 +1,23 @@
+{
+  "body": {},
+  "headers": {
+    "host": "get.openfaas-fn.svc.cluster.local:8080",
+    "user-agent": "PostmanRuntime/7.26.1",
+    "accept": "*/*",
+    "accept-encoding": "gzip, deflate, br",
+    "cache-control": "no-cache",
+    "postman-token": "10b7c20c-dffc-4dff-abb2-1449fd3aba99",
+    "x-b3-parentspanid": "c7f402722d997584",
+    "x-b3-sampled": "1",
+    "x-b3-spanid": "9e728fed48ea9b3c",
+    "x-b3-traceid": "5328528832399becfdf4af0cfeb8be40",
+    "x-forwarded-client-cert": "By=spiffe://cluster.local/ns/openfaas-fn/sa/default;Hash=55249e351226630799a07caebc3763bd4d46c4e6e6c483cfa247a2df89c0ce74;Subject=\"\";URI=spiffe://cluster.local/ns/openfaas/sa/openfaas-controller",
+    "x-forwarded-for": "127.0.0.1:58034",
+    "x-forwarded-host": "192.168.64.13:31112",
+    "x-forwarded-proto": "http",
+    "x-request-id": "5108950f-ccbc-9023-9196-9b06500d49f2"
+  },
+  "method": "GET",
+  "query": { "q": "test" },
+  "path": "/5f2c190488d23c000dfed06a"
+}
