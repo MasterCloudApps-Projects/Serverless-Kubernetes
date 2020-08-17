@@ -1,0 +1,8 @@
+whisk:
+  ingress:
+    type: NodePort
+    apiHostName: 192.168.64.10 #<change by ip of vm*>
+    apiHostPort: 31001
+
+nginx:
+  httpsNodePort: 31001
