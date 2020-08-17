@@ -10,3 +10,10 @@ For this study I will use multipass to mount the linux virtual machines and micr
 - [kanative](./knative/readme.md)
 - [OpenFaas](./openFaas/readme.md)
 - [OpenWhisk](./openwhisk/readme.md)
+
+
+## Examples
+
+- [kanative](./knative/examples/readme.md)
+- [OpenFaas](./openFaas/examples/readme.md)
+- [OpenWhisk](./openwhisk/examples/readme.md)
