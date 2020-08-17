@@ -17,3 +17,4 @@ the alternative to the DynamoDB goes through a database operator such as:
 ## Install examples
 
 - [Zalando Postgres Operator](./zalandoPostgreOperator.md)
+- [Percona Server MongoDB Operator](./perconaMongodb/readme.md)
