@@ -2,7 +2,17 @@
 
 - Prerequisites
 
-Microk8s whit istio.
+Basic installation of microk8s
+
+```shell
+multipass shell serverlessk8s
+```
+
+Enable istio addon
+
+```shell
+microk8s.enable istio
+```
 
 <https://knative.dev/docs/install/any-kubernetes-cluster/>
 
