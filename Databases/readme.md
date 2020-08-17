@@ -12,3 +12,8 @@ the alternative to the DynamoDB goes through a database operator such as:
   - [Zalando Postgres Operator](https://github.com/zalando/postgres-operator)
 - [Scylla Alternator](https://docs.scylladb.com/using-scylla/alternator/)
 - [Others](https://operatorhub.io/?category=Database)
+
+
+## Install examples
+
+- [Zalando Postgres Operator](./zalandoPostgreOperator.md)
