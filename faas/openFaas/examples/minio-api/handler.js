@@ -2,14 +2,15 @@
 
 var Minio = require('minio');
 const { Path } = require('path-parser');
+const fs = require('fs');
+
 
 var minioClient = new Minio.Client({
-  endPoint: 'open-faas-minio.openfaas-fn.svc.cluster.local',
-  port: 9000,
-  useSSL: false,
-  accessKey: 'AKIAIOSFODNN7EXAMPLE',
-  secretKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY',
-  'use_path_style_endpoint': true
+  endPoint: process.env["endpoint"],
+  port: Number.parseInt(process.env["minio-port"]),
+  useSSL: (process.env["use-ssl"] == 'true'),
+  accessKey: fs.readFileSync("/var/openfaas/secrets/acceskey", "utf-8"),
+  secretKey: fs.readFileSync("/var/openfaas/secrets/secretkey", "utf-8")
 });
 
 module.exports = async (event, context) => {
