@@ -1,10 +1,17 @@
 const Mongo = require("mongodb");
 const MongoClient = Mongo.MongoClient;
+const fs = require('fs');
+const database= process.env["db_name"]; //myApp
 
-var url = "mongodb+srv://myApp:myAppPassword@my-cluster-name-rs0-0.psmdb.svc.cluster.local/admin?ssl=false";
-// var url = "mongodb+srv://myApp:myAppPassword@10.152.183.38/admin?ssl=false";
-// var url = "mongodb+srv://myApp:myAppPassword@my-cluster-name-rs0.psmdb.svc.cluster.local/admin?replicaSet=rs0&ssl=false";
+function initConexion() {
+    const user = fs.readFileSync("/var/openfaas/secrets/username", "utf-8"), 
+    password = fs.readFileSync("/var/openfaas/secrets/password", "utf-8"),
+    host =  process.env["db_host"]; 
 
+    return `mongodb+srv://${user}:${password}@${host}/admin?replicaSet=rs0&ssl=false`;
+}
+
+var url = initConexion();
 
 // Data base connection and initialization
 var entryCollection;
@@ -12,15 +19,15 @@ var client;
 module.exports = async () => {    
 
     if(!client){
+        console.log("MONGO: connect to -> " + url);    
         client = await MongoClient.connect(url, {
-            connectWithNoPrimary:true,
+            // connectWithNoPrimary:true,
             // useUnifiedTopology: true,
             useNewUrlParser: true
         });
-        console.log("MONGO: connect to -> " + url);    
     }
     
-    let db = client.db("myApp");
+    let db = client.db(database);
     entryCollection = db.collection("entry");
 
     return {

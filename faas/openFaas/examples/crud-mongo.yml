@@ -1,10 +1,15 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://192.168.64.13:31112
+  gateway: http://192.168.64.9:31112
 functions:
   get:
     lang: node10-express
     handler: ./crud-mongo
     image: oillescas/crud-mongo:latest
+    environment:
+      db_host: openfaas-mongo-rs0.default.svc.cluster.local
+      db_name: openfaas
+    secrets:
+      - openfaas-mongodb
 

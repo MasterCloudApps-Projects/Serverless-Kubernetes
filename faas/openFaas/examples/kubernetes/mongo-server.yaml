@@ -1,7 +1,7 @@
 apiVersion: psmdb.percona.com/v1-4-0
 kind: PerconaServerMongoDB
 metadata:
-  name: my-cluster-name
+  name: openfaas-mongo
 spec:
 #  platform: openshift
 # clusterServiceDNSSuffix: svc.cluster.local
@@ -13,7 +13,7 @@ spec:
   allowUnsafeConfigurations: true
 #  updateStrategy: RollingUpdate
   secrets:
-    users: my-cluster-name-secrets
+    users: openfaas-mongo-secrets
   pmm:
     enabled: false
     image: percona/percona-server-mongodb-operator:1.4.0-pmm
@@ -56,7 +56,7 @@ spec:
       maxUnavailable: 1
 #      minAvailable: 0
     expose:
-      enabled: true
+      enabled: false
       exposeType: ClusterIP
     arbiter:
       enabled: false
@@ -111,7 +111,7 @@ spec:
     security:
       redactClientLogData: false
       enableEncryption: true
-      encryptionKeySecret: my-cluster-name-mongodb-encryption-key
+      encryptionKeySecret: openfaas-mongo-mongodb-encryption-key
       encryptionCipherMode: AES256-CBC
     setParameter:
       ttlMonitorSleepSecs: 60
@@ -159,14 +159,14 @@ spec:
 #        type: s3
 #        s3:
 #          bucket: S3-BACKUP-BUCKET-NAME-HERE
-#          credentialsSecret: my-cluster-name-backup-s3
+#          credentialsSecret: openfaas-mongo-backup-s3
 #          region: us-west-2
 #      minio:
 #        type: s3
 #        s3:
 #          bucket: MINIO-BACKUP-BUCKET-NAME-HERE
 #          region: us-east-1
-#          credentialsSecret: my-cluster-name-backup-minio
+#          credentialsSecret: openfaas-mongo-backup-minio
 #          endpointUrl: http://minio.psmdb.svc.cluster.local:9000/minio/
     tasks:
 #      - name: daily-s3-us-west

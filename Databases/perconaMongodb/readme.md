@@ -27,10 +27,10 @@ kubectl apply -f custom_cr.yaml
 
 ```shell
 # Get Admin user
-kubectl get secret  my-mongodb-secrets -o 'jsonpath={.data.MONGODB_USER_ADMIN_PASSWORD}'| base64 -d
+kubectl get secret  my-mongodb-secrets -o 'jsonpath={.data.MONGODB_USER_ADMIN_USER}'| base64 -d
 
 # Get Admin password
-kubectl get secret  my-mongodb-secrets -o 'jsonpath={.data.MONGODB_USER_ADMIN_USER}'| base64 -d
+kubectl get secret  my-mongodb-secrets -o 'jsonpath={.data.MONGODB_USER_ADMIN_PASSWORD}'| base64 -d
 ```
 
 test cluster
