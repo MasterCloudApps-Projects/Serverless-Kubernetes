@@ -1,22 +1,26 @@
-apiVersion: psmdb.percona.com/v1-4-0
+apiVersion: psmdb.percona.com/v1-5-0
 kind: PerconaServerMongoDB
 metadata:
   name: my-mongodb
 spec:
 #  platform: openshift
-# clusterServiceDNSSuffix: svc.cluster.local
-  image: percona/percona-server-mongodb-operator:1.4.0-mongod4.2
+#  clusterServiceDNSSuffix: svc.cluster.local
+  image: percona/percona-server-mongodb:4.2.8-8
   imagePullPolicy: Always
 #  imagePullSecrets:
 #    - name: private-registry-credentials
 #  runUid: 1001
   allowUnsafeConfigurations: true
-#  updateStrategy: RollingUpdate
+  updateStrategy: SmartUpdate
+  upgradeOptions:
+    versionServiceEndpoint: https://check.percona.com/versions/
+    apply: recommended
+    schedule: "0 2 * * *"
   secrets:
     users: my-mongodb-secrets
   pmm:
     enabled: false
-    image: percona/percona-server-mongodb-operator:1.4.0-pmm
+    image: percona/percona-server-mongodb-operator:1.5.0-pmm
     serverHost: monitoring-service
   replsets:
   - name: rs0
@@ -57,12 +61,12 @@ spec:
 #      minAvailable: 0
     expose:
       enabled: false
-      exposeType: ClusterIP
+      exposeType: LoadBalancer
     arbiter:
       enabled: false
       size: 1
       affinity:
-       antiAffinityTopologyKey: "none"
+       antiAffinityTopologyKey: "kubernetes.io/hostname"
 #       advanced:
 #         nodeAffinity:
 #           requiredDuringSchedulingIgnoredDuringExecution:
@@ -138,6 +142,10 @@ spec:
       mode: slowOp
       slowOpThresholdMs: 100
       rateLimit: 100
+#    loadBalancerSourceRanges:
+#      - 10.0.0.0/8
+#    serviceAnnotations:
+#      service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http   
 #    auditLog:
 #      destination: file
 #      format: BSON
@@ -145,7 +153,7 @@ spec:
   backup:
     enabled: true
     restartOnFailure: true
-    image: percona/percona-server-mongodb-operator:1.4.0-backup
+    image: percona/percona-server-mongodb-operator:1.5.0-backup
     serviceAccountName: percona-server-mongodb-operator
 #    resources:
 #      limits:

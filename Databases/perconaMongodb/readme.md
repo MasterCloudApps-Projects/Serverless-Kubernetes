@@ -6,17 +6,10 @@ How to install Percona Server for MongoDB Operator
 
 Basic installation of microk8s
 
-## Clone repository
+## Deploy the operator
 
 ```shell
-git clone -b v1.4.0 https://github.com/percona/percona-server-mongodb-operator
-cd percona-server-mongodb-operator
-```
-
-Deploy the operator
-
-```shell
-kubectl apply -f deploy/bundle.yaml
+kubectl apply -f https://raw.githubusercontent.com/percona/percona-server-mongodb-operator/v1.5.0/deploy/bundle.yaml
 ```
 
 Because microk8s runs locally, the default deploy/cr.yaml file should be edited to adapt the Operator for the the local installation with limited resources, deploy custom_cr.yaml
@@ -55,6 +48,5 @@ rs0:PRIMARY> db.createUser({
     mechanisms: [
        "SCRAM-SHA-1"
     ]
-
 })
 ```
