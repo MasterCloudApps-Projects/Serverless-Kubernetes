@@ -1,0 +1,19 @@
+version: 1.0
+provider:
+  name: openfaas
+functions:
+  donwload-forecast:
+    lang: node12
+    handler: ./donwload-forecast
+    image: oillescas/donwload-forecast:latest
+    annotations:
+      topic: cron-function
+      schedule: "1 */4 * * *"
+    environment:
+      endpoint: my-minio.default.svc.cluster.local
+      minio-port: 9000
+      use-ssl: false
+      BUCKET_NAME: forecast
+    secrets: 
+    - openfaas-minio
+
