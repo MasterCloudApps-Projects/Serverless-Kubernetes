@@ -1,0 +1,59 @@
+@startuml kubernetes
+
+footer Kubernetes Plant-UML
+' scale max 1024 width
+
+skinparam nodesep 30
+skinparam ranksep 30
+
+' Azure
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+!includeurl KubernetesPuml/OSS/KubernetesSvc.puml
+'!includeurl KubernetesPuml/OSS/KubernetesPod.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+!includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
+
+
+actor "Admin" as adminAlias
+left to right direction
+
+' Kubernetes Components
+Cluster_Boundary(cluster, "Kubernetes Cluster") {
+    Namespace_Boundary(default, "default") {
+        KubernetesSvc(key,"Keycloack", "")
+    }
+
+    Namespace_Boundary(nsfn, "openfaas-fn") {
+
+        KubernetesSvc(fndf, "Any function","")
+    }
+
+    Namespace_Boundary(ns, "openfaas") {
+        KubernetesSvc(o2p, "oauth2-proxy", "")
+        KubernetesSvc(ofg, "openfaas Gateway", "")
+        KubernetesIng(ingress, "API Gateway", "")
+    }
+
+}
+
+'Admin
+Rel(adminAlias, ingress, "Reload forecast", "3")
+Rel(ingress, o2p,"Reload forecast", "3,1")
+Rel(o2p, key, "credentials", "3,2")
+Rel(key, o2p, "credentials", "3,3")
+Rel(o2p,ofg, "Reload forecast", "3,4")
+Rel(ofg, fndf, "Download forecast", "3,5")
+
+
+
+
+@enduml
