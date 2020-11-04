@@ -30,3 +30,7 @@ rs0:PRIMARY> db.createUser({
 
 ## Scaling 
 - [Scale](https://www.percona.com/doc/kubernetes-operator-for-psmongodb/scaling.html)
+
+
+## Links
+- [Official docs](https://www.percona.com/doc/kubernetes-operator-for-psmongodb/index.html)
