@@ -1,33 +1,10 @@
-# Install mongodb operator
+# Percona mongodb operator
 
-How to install Percona Server for MongoDB Operator
 
-## Prerequisites
+## Install
+- [Install mongodb operator](install.md)
 
-Basic installation of microk8s
-
-## Deploy the operator
-
-```shell
-kubectl apply -f https://raw.githubusercontent.com/percona/percona-server-mongodb-operator/v1.5.0/deploy/bundle.yaml
-```
-
-Because microk8s runs locally, the default deploy/cr.yaml file should be edited to adapt the Operator for the the local installation with limited resources, deploy custom_cr.yaml
-
-```shell
-kubectl apply -f custom_cr.yaml
-```
-
-```shell
-# Get Admin user
-kubectl get secret  my-mongodb-secrets -o 'jsonpath={.data.MONGODB_USER_ADMIN_USER}'| base64 -d
-
-# Get Admin password
-kubectl get secret  my-mongodb-secrets -o 'jsonpath={.data.MONGODB_USER_ADMIN_PASSWORD}'| base64 -d
-```
-
-test cluster
-
+## Test cluster
 ```shell
 kubectl run -i --rm --tty percona-client --namespace=default --image=percona/percona-server-mongodb:4.0 --restart=Never -- bash -il
 ```
@@ -50,3 +27,6 @@ rs0:PRIMARY> db.createUser({
     ]
 })
 ```
+
+## Scaling 
+- [Scale](https://www.percona.com/doc/kubernetes-operator-for-psmongodb/scaling.html)
