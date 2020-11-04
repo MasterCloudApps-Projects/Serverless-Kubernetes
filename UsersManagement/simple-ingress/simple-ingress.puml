@@ -36,14 +36,10 @@ Cluster_Boundary(cluster, "Kubernetes Cluster") {
     }
 }
 
-' 'Static Web
-Rel(userAlias, ingress, "Load Web", "0")
-Rel(ingress, minio, "Static web", "0")
-Rel(ingress, o2p,"Reload forecast", "3,1")
-Rel(o2p, key,"Reload forecast", "3,1")
-
-
-
-
+'Static Web
+Rel(userAlias, ingress, "Get index.html", "0")
+Rel(ingress, o2p,"valid credential", "1")
+Rel(o2p, key,"Login", "2")
+Rel(ingress, minio, "get index.html", "3")
 
 @enduml

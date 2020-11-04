@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+functions:
+  nats-reciver:
+    lang: node12-nats
+    handler: ./nats-reciver
+    image: oillescas/nats-reciver:latest
+    annotations:
+      topic: "nats-test"
+    environment:
+      RAW_BODY: 'true'
+

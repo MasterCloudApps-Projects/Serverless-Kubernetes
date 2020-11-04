@@ -5,8 +5,8 @@
 
 1. [Databases](#databases)
 2. [File Management](#file-management)
-3. [User Management](#user-management)
 4. [Functions as a service (Faas)](#functions-as-a-service-faas)
+3. [User Management](#user-management)
 5. [Message queue](#message-queue)
 
 
@@ -21,7 +21,7 @@
 the alternative to the DynamoDB,Cosmos,... goes through a database operator such as:
 #### Examples
 - [ ] [Mongodb operator](Databases/perconaMongodb/readme.md)
-- [ ] [Postgresql operator](Databases/zalandoPostgresOperator.md)
+- [ ] [Postgresql operator](Databases/zalandoPostgresOperator/readme.md)
 
 #### Others database operators
 
@@ -37,13 +37,6 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 
 - [ ] [minio](StaticPageDeployment/readme.md)
 
-### User Management
-| AWS     | Azure                | GCP               |
-|---------|----------------------|-------------------|
-| cognito | Active Directory B2C | Identity Platform |
-
-- [ ] [keycloak](UsersManagement/readme.md)
-
 ### Functions as a service (Faas)
 | AWS    | Azure     | GCP             |
 |--------|-----------|-----------------|
@@ -51,6 +44,14 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 
 - [ ] [knative](faas/knative/readme.md)
 - [ ] [openfaas](faas/openfaas/readme.md)
+
+### User Management
+| AWS     | Azure                | GCP               |
+|---------|----------------------|-------------------|
+| cognito | Active Directory B2C | Identity Platform |
+
+- [ ] [keycloak](UsersManagement/readme.md)
+
 
 ### Message queue
 | AWS     | Azure                   | GCP           |
