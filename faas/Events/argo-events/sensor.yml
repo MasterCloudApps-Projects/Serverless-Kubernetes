@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: openfaas-sensor
+spec:
+  template:
+    serviceAccountName: argo-events-sa
+  dependencies:
+    - name: test-dep
+      eventSourceName: webhook
+      eventName: example
+  triggers:
+    - template:
+        name: openfaas-trigger
+        http:
+          url: http://gateway.openfaas.svc.cluster.local:8080/function/donwload-forecast
+          payload:
+            - src:
+                dependencyName: test-dep
+              dest: bucket
+          method: POST
