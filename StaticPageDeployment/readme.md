@@ -10,8 +10,10 @@
 
 ## Deploy static site
 
-Configure mc client
+Install minio client
+- [Minio Client](https://github.com/minio/mc)
 
+Configure mc client
 ```shell
 # mc config host add minio-local http://<VirtualMachine-IP>:<External-Port> YOURACCESSKEY YOURSECRETKEY S3v4
 mc config host add minio-local http://192.168.0.105:30544 YOURACCESSKEY YOURSECRETKEY
@@ -39,3 +41,7 @@ kubectl apply -f ingress.yaml
 
 you can see de static site in
 <https://miniostatic.192.168.0.100.nip.io/>
+
+
+## Link
+- [Minio Client Guide](https://github.com/minio/mc/blob/master/docs/minio-client-complete-guide.md)
