@@ -1,35 +1,51 @@
-# Install OpenFaas
+# OpenFaas
 
-- Clone repository
+## Install
+- [Install OpenFaas](install.md)
 
-```shell
-git clone https://github.com/openfaas/faas-netes
-```
+## Cli
+- [install cli](https://docs.openfaas.com/cli/install/)
 
-- Create namespaces
+More used commands
 
-```shell
-kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
-```
+    > `faas-cli build` - build an image into the local Docker library
 
-- Generate password
+    > `faas-cli push` - push that image to a remote container registry
 
-```shell
-# generate a random password
-PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)
+    > `faas-cli deploy` - deploy your function into a cluster
 
-kubectl -n openfaas create secret generic basic-auth \
---from-literal=basic-auth-user=admin \
---from-literal=basic-auth-password="$PASSWORD"
-```
+    > The `faas-cli up` command automates all of the above in a single command.
 
-- Deploy openfaas
+    > `faas-cli logs NAME` command will stream the logs for the named function
 
-```shell
-cd faas-netes && \
-kubectl apply -f ./yaml
-```
+    > faas template pull https://github.com/oillescas/openfaas_nodejs_templates
 
-- install cli
+- [Docs](https://blog.alexellis.io/quickstart-openfaas-cli/)
 
-TODO
+
+## Format
+Containers with templates build by cli
+
+## Examples
+### REST api (mongo and postgre)
+### Api minio 
+### minio-webhook
+### nats queme
+### secure function
+
+## Templates
+
+### Custom templates
+- node12-files
+- node12-nats
+
+## Monitoring
+- prometheus instaled in openfaas namespace
+- grafana dashboads
+    - https://grafana.com/grafana/dashboards/3434
+    - https://grafana.com/grafana/dashboards/3526
+
+## Links
+- [Auto Scaling](https://docs.openfaas.com/architecture/autoscaling/)
+- [Triggers](https://docs.openfaas.com/reference/triggers/)
+- [Cron Conector](https://github.com/openfaas/cron-connector)

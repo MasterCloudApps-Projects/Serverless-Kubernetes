@@ -33,10 +33,12 @@ Deploy sensor with triger http to openfaas function
 kubectl -n argo-events apply -f sensor.yml
 ```
 
+Open port of webhook pod
 ```sh
 kubectl -n argo-events port-forward webhook-eventsource-n2f6q-6d8775745c-pqmvb 12000:12000
 ```
 
+Post message to webhook
 ```sh
 curl -d '{"message":"this is my first webhook"}' -H "Content-Type: application/json" -X POST http://localhost:12000/example
 ```
