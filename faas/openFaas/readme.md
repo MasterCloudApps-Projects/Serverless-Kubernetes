@@ -21,6 +21,7 @@ More used commands
     > faas template pull https://github.com/oillescas/openfaas_nodejs_templates
 
 - [Docs](https://blog.alexellis.io/quickstart-openfaas-cli/)
+- [GitHub](https://github.com/openfaas/faas-cli)
 
 
 ## Format

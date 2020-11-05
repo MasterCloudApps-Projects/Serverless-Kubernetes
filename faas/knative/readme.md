@@ -1,53 +1,20 @@
-# Install Knative
+# Kantive
 
-- Prerequisites
+## Install
+- [Install Knative](install.md)
 
-Basic installation of microk8s
+## Format
+Containers
 
-```shell
-multipass shell serverlessk8s
-```
+## Examples
 
-Enable istio addon
+### REST api
 
-```shell
-microk8s.enable istio
-```
+### Event Broker 
 
-<https://knative.dev/docs/install/any-kubernetes-cluster/>
+## Monitoring
+- prometheus and grafana instaled and configured in knative-monitoring namespace
 
-- Installing the Serving component
-  
-```shell
-kubectl apply --filename https://github.com/knative/serving/releases/download/v0.15.0/serving-crds.yaml
-kubectl apply --filename https://github.com/knative/serving/releases/download/v0.15.0/serving-core.yaml
-kubectl apply --filename https://github.com/knative/net-istio/releases/download/v0.15.0/release.yaml
-```
-
-- Monitor the Knative components until all of the components show a STATUS of Running or Completed:
-
-```shell
-kubectl get pods --namespace knative-serving
-```
-
-- Installing the eventig component
-  
-```shell
-kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.16.0/eventing-crds.yaml
-kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.16.0/eventing-core.yaml
-kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.16.0/in-memory-channel.yaml
-kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.16.0/mt-channel-broker.yaml
-```
-
-- Monitor the Knative components until all of the components show a STATUS of Running:
-
-```shell
-kubectl get pods --namespace knative-eventing
-```
-
-- Installing the Observability plugin
-
-```shell
-kubectl apply --filename https://github.com/knative/serving/releases/download/v0.16.0/monitoring-core.yaml
-kubectl apply --filename https://github.com/knative/serving/releases/download/v0.16.0/monitoring-metrics-prometheus.yaml
-```
+## Links
+- [Auto Scaling](https://knative.dev/docs/serving/autoscaling/)
+- [Event sources](https://knative.dev/docs/eventing/sources/)
