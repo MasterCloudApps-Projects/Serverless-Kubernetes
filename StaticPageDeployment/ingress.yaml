@@ -10,9 +10,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    - miniostatic.192.168.64.9.nip.io
+    - miniostatic.192.168.0.100.nip.io
   rules:
-  - host: miniostatic.192.168.64.9.nip.io
+  - host: miniostatic.192.168.0.100.nip.io
     http:
       paths:
       - path: /(.*)
