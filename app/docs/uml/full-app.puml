@@ -3,8 +3,8 @@
 footer Kubernetes Plant-UML
 ' scale max 1024 width
 
-skinparam nodesep 30
-skinparam ranksep 30
+skinparam nodesep 50
+skinparam ranksep 100
 
 ' Azure
 !define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
@@ -28,10 +28,11 @@ left to right direction
 
 ' Kubernetes Components
 Cluster_Boundary(cluster, "Kubernetes Cluster") {
+    
     Namespace_Boundary(default, "default") {
+        KubernetesSvc(key,"Keycloack", "")
         KubernetesSvc(mongo, "Mongo", "")
         KubernetesSvc(minio, "Minio", "")
-        KubernetesSvc(key,"Keycloack", "")
     }
 
     Namespace_Boundary(nsfn, "openfaas-fn") {
@@ -41,19 +42,19 @@ Cluster_Boundary(cluster, "Kubernetes Cluster") {
     }
 
     Namespace_Boundary(ns, "openfaas") {
+        KubernetesIng(ingress, "API Gateway", "")
         KubernetesSvc(o2p, "oauth2-proxy", "")
         KubernetesSvc(ofg, "openfaas Gateway", "")
         KubernetesSvc(nats, "nats", "")
         KubernetesDeploy(ofcc,"cron-connector","")
         KubernetesDeploy(natsconector, "nats-connector","")
-        KubernetesIng(ingress, "API Gateway", "")
     }
 
 }
 
 ' 'Static Web
 Rel(userAlias, ingress, "Load Web", "0")
-Rel(ingress, minio, "Static web", "0")
+Rel_U(ingress, minio, "Static web", "0")
 
 
 'Import forecast
