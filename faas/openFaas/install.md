@@ -1,4 +1,7 @@
 # Install OpenFaas
+- Prerequisites
+
+Basic installation of microk8s
 
 - Clone repository
 
@@ -29,7 +32,3 @@ kubectl -n openfaas create secret generic basic-auth \
 cd faas-netes && \
 kubectl apply -f ./yaml
 ```
-
-- install cli
-
-TODO
