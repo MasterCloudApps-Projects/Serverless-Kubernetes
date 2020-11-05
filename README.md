@@ -8,8 +8,7 @@
 4. [Functions as a service (Faas)](#functions-as-a-service-faas)
 3. [User Management](#user-management)
 5. [Message queue](#message-queue)
-
-
+6. [Example App](#example-app)
 
 
 ### Databases
@@ -20,8 +19,8 @@
 
 the alternative to the DynamoDB,Cosmos,... goes through a database operator such as:
 #### Examples
-- [ ] [Mongodb operator](Databases/perconaMongodb/readme.md)
-- [ ] [Postgresql operator](Databases/zalandoPostgresOperator/readme.md)
+- [x] [Mongodb operator](Databases/perconaMongodb/readme.md)
+- [x] [Postgresql operator](Databases/zalandoPostgresOperator/readme.md)
 
 #### Others database operators
 
@@ -35,7 +34,7 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 |-----|--------------|---------------|
 | s3  | Blob Storage | Cloud Storage |
 
-- [ ] [minio](StaticPageDeployment/readme.md)
+- [x] [minio](StaticPageDeployment/readme.md)
 
 ### Functions as a service (Faas)
 | AWS    | Azure     | GCP             |
@@ -59,3 +58,12 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 | SNS,SQS | Service Bus, Event Grid | Cloud Pub/Sub |
 
 - [ ] [NATS](faas/openfass/nats.md)
+
+### Example app
+- [ ] [App](app/readme.md)
+
+
+## Next steps
+integrate workflows tools
+- [Argo Workflows](https://argoproj.github.io/projects/argo)
+- [Faas Flows](https://github.com/s8sg/faas-flow)
