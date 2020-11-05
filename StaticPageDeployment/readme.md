@@ -15,21 +15,21 @@ Install minio client
 
 Configure mc client
 ```shell
-# mc config host add minio-local http://<VirtualMachine-IP>:<External-Port> YOURACCESSKEY YOURSECRETKEY S3v4
-mc config host add minio-local http://192.168.0.105:30544 YOURACCESSKEY YOURSECRETKEY
+# mc config host add minio-tfm http://<VirtualMachine-IP>:<External-Port> YOURACCESSKEY YOURSECRETKEY S3v4
+mc config host add minio-tfm http://192.168.0.105:30544 YOURACCESSKEY YOURSECRETKEY
 ```
 
 ### Create and configure bucket
 
 ```shell
-mc mb minio-local/static-site
-mc policy set download minio-local/static-site
+mc mb minio-tfm/static-site
+mc policy set download minio-tfm/static-site
 ```
 
 ### upload static site 
 
 ```shell
-mc mirror ./simple-app/dist minio-local/static-site
+mc mirror ./simple-app/dist minio-tfm/static-site
 ...d34bd3.js:  151.63 KiB / 151.63 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  1.24 MiB/s 0s
 ```
 
