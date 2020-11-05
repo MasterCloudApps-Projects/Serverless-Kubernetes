@@ -18,7 +18,6 @@ skinparam ranksep 30
 !includeurl KubernetesPuml/kubernetes_Context.puml
 !includeurl KubernetesPuml/kubernetes_Simplified.puml
 !includeurl KubernetesPuml/OSS/KubernetesSvc.puml
-'!includeurl KubernetesPuml/OSS/KubernetesPod.puml
 !includeurl KubernetesPuml/OSS/KubernetesIng.puml
 !includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
 
