@@ -1,6 +1,6 @@
 # Static deployments
 
-![Static website](simple-app.png)
+![Static website](../out/StaticPageDeployment/simple-app/simple-app.png)
 
 ## Prerequisites
 

@@ -4,11 +4,11 @@
 
 Basic installation of microk8s
 
+Enable istio addon
+
 ```shell
 multipass shell serverlessk8s
 ```
-
-Enable istio addon
 
 ```shell
 microk8s.enable istio

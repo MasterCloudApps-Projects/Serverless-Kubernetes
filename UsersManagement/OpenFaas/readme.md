@@ -1,6 +1,6 @@
 # Secure openFaas function
 
-![Load Web](openfaas-um.png)
+![Load Web](../../out/UsersManagement/OpenFaas/secure-openfaas/secure-openfaas.png)
 
 
 ## Links

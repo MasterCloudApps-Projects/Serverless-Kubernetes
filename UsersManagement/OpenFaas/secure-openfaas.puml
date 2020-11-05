@@ -1,4 +1,4 @@
-@startuml kubernetes
+@startuml secure-openfaas
 
 footer Kubernetes Plant-UML
 ' scale max 1024 width

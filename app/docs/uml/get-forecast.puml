@@ -1,4 +1,4 @@
-@startuml simple-ingress
+@startuml get-forecast
 
 footer Kubernetes Plant-UML
 ' scale max 1024 width
@@ -18,9 +18,7 @@ skinparam ranksep 30
 !includeurl KubernetesPuml/kubernetes_Context.puml
 !includeurl KubernetesPuml/kubernetes_Simplified.puml
 !includeurl KubernetesPuml/OSS/KubernetesSvc.puml
-'!includeurl KubernetesPuml/OSS/KubernetesPod.puml
 !includeurl KubernetesPuml/OSS/KubernetesIng.puml
-!includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
 
 
 actor "User" as userAlias
@@ -29,17 +27,29 @@ left to right direction
 ' Kubernetes Components
 Cluster_Boundary(cluster, "Kubernetes Cluster") {
     Namespace_Boundary(default, "default") {
-        KubernetesIng(ingress, "API Gateway", "")
-        KubernetesSvc(minio, "Minio", "")
-        KubernetesSvc(key,"Keycloack", "")
-        KubernetesSvc(o2p, "oauth2-proxy", "")
+        KubernetesSvc(mongo, "Mongo", "")
     }
+
+    Namespace_Boundary(nsfn, "openfaas-fn") {
+        KubernetesSvc(fngf, "[function]\nget-forecast","")
+    }
+
+    Namespace_Boundary(ns, "openfaas") {
+        KubernetesSvc(ofg, "openfaas Gateway", "")
+        KubernetesIng(ingress, "API Gateway", "")
+    }
+
 }
 
-'Static Web
-Rel(userAlias, ingress, "Get index.html", "0")
-Rel(ingress, o2p,"valid credential", "1")
-Rel(o2p, key,"Login", "2")
-Rel(ingress, minio, "get index.html", "3")
+'API
+Rel(userAlias, ingress, "Get forecast", "0")
+Rel(ingress, ofg, "Get forecast", "1")
+Rel(ofg, fngf, "Get forecast", "2")
+Rel(fngf, mongo, "Query forecast", "3" )
+
+
+
+
+
 
 @enduml

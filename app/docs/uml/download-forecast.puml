@@ -1,4 +1,4 @@
-@startuml simple-ingress
+@startuml download-forecast
 
 footer Kubernetes Plant-UML
 ' scale max 1024 width
@@ -18,28 +18,30 @@ skinparam ranksep 30
 !includeurl KubernetesPuml/kubernetes_Context.puml
 !includeurl KubernetesPuml/kubernetes_Simplified.puml
 !includeurl KubernetesPuml/OSS/KubernetesSvc.puml
-'!includeurl KubernetesPuml/OSS/KubernetesPod.puml
-!includeurl KubernetesPuml/OSS/KubernetesIng.puml
 !includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
 
 
-actor "User" as userAlias
 left to right direction
 
 ' Kubernetes Components
 Cluster_Boundary(cluster, "Kubernetes Cluster") {
     Namespace_Boundary(default, "default") {
-        KubernetesIng(ingress, "API Gateway", "")
         KubernetesSvc(minio, "Minio", "")
-        KubernetesSvc(key,"Keycloack", "")
-        KubernetesSvc(o2p, "oauth2-proxy", "")
+    }
+
+    Namespace_Boundary(nsfn, "openfaas-fn") {
+        KubernetesSvc(fndf, "[function]\ndonwload-forecast", "")
+    }
+
+    Namespace_Boundary(ns, "openfaas") {
+        KubernetesSvc(ofg, "openfaas Gateway", "")
+        KubernetesDeploy(ofcc,"cron-connector","")
     }
 }
 
-'Static Web
-Rel(userAlias, ingress, "Get index.html", "0")
-Rel(ingress, o2p,"valid credential", "1")
-Rel(o2p, key,"Login", "2")
-Rel(ingress, minio, "get index.html", "3")
+'Import forecast
+Rel(ofcc, ofg, "Launch import\nCRON JOB", "1")
+Rel(ofg, fndf, "Download forecast", "2")
+Rel(fndf, minio, "Save forecast files", "3")
 
 @enduml
