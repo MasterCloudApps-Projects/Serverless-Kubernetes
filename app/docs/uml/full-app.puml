@@ -30,6 +30,7 @@ left to right direction
 Cluster_Boundary(cluster, "Kubernetes Cluster") {
     
     Namespace_Boundary(default, "default") {
+        KubernetesIng(staticIngress, "Static Ingress", "")
         KubernetesSvc(key,"Keycloack", "")
         KubernetesSvc(mongo, "Mongo", "")
         KubernetesSvc(minio, "Minio", "")
@@ -53,8 +54,8 @@ Cluster_Boundary(cluster, "Kubernetes Cluster") {
 }
 
 ' 'Static Web
-Rel(userAlias, ingress, "Load Web", "0")
-Rel_U(ingress, minio, "Static web", "0")
+Rel(userAlias, staticIngress, "Load Web", "0")
+Rel_U(staticIngress, minio, "Static web", "0")
 
 
 'Import forecast

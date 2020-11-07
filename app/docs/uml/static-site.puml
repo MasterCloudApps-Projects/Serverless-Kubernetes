@@ -1,0 +1,42 @@
+@startuml static-site
+
+footer Kubernetes Plant-UML
+' scale max 1024 width
+
+skinparam nodesep 50
+skinparam ranksep 100
+
+' Azure
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+!includeurl KubernetesPuml/OSS/KubernetesSvc.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+!includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
+
+
+actor "User" as userAlias
+left to right direction
+
+' Kubernetes Components
+Cluster_Boundary(cluster, "Kubernetes Cluster") {
+    
+    Namespace_Boundary(default, "default") {
+        KubernetesIng(staticIngress, "Static Ingress", "")
+        KubernetesSvc(minio, "Minio", "")
+    }
+}
+
+' 'Static Web
+Rel(userAlias, staticIngress, "Load Web", "0")
+Rel(staticIngress, minio, "Static web", "0")
+
+
+@enduml
