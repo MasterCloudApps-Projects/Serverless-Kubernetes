@@ -67,3 +67,6 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 integrate workflows tools
 - [Argo Workflows](https://argoproj.github.io/projects/argo)
 - [Faas Flows](https://github.com/s8sg/faas-flow)
+analyze and test CI/CD in kubernetes faas 
+- [openfaas cloud](https://github.com/openfaas/openfaas-cloud)
+- [ci/cd for knative with concourse](https://medium.com/aptomi/ci-cd-for-knative-serverless-apps-on-kubernetes-with-concourse-54bafef51767)
