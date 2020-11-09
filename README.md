@@ -6,7 +6,7 @@
 1. [Databases](#databases)
 2. [File Management](#file-management)
 3. [Functions as a service (Faas)](#functions-as-a-service-faas)
-4. [Message queue](#message-queue)
+4. [Message queue and Event management](#message-queue-and-event-management)
 5. [User Management](#user-management)
 6. [Example App](#example-app)
 
@@ -40,13 +40,10 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 - [ ] [openfaas](faas/openfaas/readme.md)
 
 
-### Message queue and events
-| AWS     | Azure                   | GCP           |
-|---------|-------------------------|---------------|
-| SNS,SQS | Service Bus, Event Grid | Cloud Pub/Sub |
-|  |  |  |
+### Message queue and Event management
 
-- [ ] [NATS](faas/openfass/nats.md)
+- [ ] [Knative](faas/Knative/events.md)
+- [ ] [Openfaas](faas/openfass/events.md)
 - [ ] [Argo Events](faas/Events/argo-events/readme.md)
 
 ### User Management
