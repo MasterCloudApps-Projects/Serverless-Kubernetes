@@ -61,15 +61,15 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 
 
 ## Next steps
-Others database operators
-- [MongoDB Enterprise Kubernetes Operator](https://github.com/mongodb/mongodb-enterprise-kubernetes)
-- [Scylla Alternator](https://docs.scylladb.com/using-scylla/alternator/)
-- [Others](https://operatorhub.io/?category=Database)
-integrate workflows tools
-- [Argo Workflows](https://argoproj.github.io/projects/argo)
-- [Faas Flows](https://github.com/s8sg/faas-flow)
-analyze and test CI/CD in kubernetes faas 
-- [openfaas cloud](https://github.com/openfaas/openfaas-cloud)
-- [ci/cd for knative with concourse](https://medium.com/aptomi/ci-cd-for-knative-serverless-apps-on-kubernetes-with-concourse-54bafef51767)
-Othes tools
-- [Openfaas Ingress Operator](https://github.com/openfaas/ingress-operator)
+- Others database operators
+    - [MongoDB Enterprise Kubernetes Operator](https://github.com/mongodb/mongodb-enterprise-kubernetes)
+    - [Scylla Alternator](https://docs.scylladb.com/using-scylla/alternator/)
+    - [Others](https://operatorhub.io/?category=Database)
+- integrate workflows tools
+    - [Argo Workflows](https://argoproj.github.io/projects/argo)
+    - [Faas Flows](https://github.com/s8sg/faas-flow)
+- analyze and test CI/CD in kubernetes faas 
+    - [openfaas cloud](https://github.com/openfaas/openfaas-cloud)
+    - [ci/cd for knative with concourse](https://medium.com/aptomi/ci-cd-for-knative-serverless-apps-on-kubernetes-with-concourse-54bafef51767)
+- Othes tools
+    - [Openfaas Ingress Operator](https://github.com/openfaas/ingress-operator)
