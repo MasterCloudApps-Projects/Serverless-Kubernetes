@@ -50,3 +50,4 @@ Containers with templates build by cli
 - [Auto Scaling](https://docs.openfaas.com/architecture/autoscaling/)
 - [Triggers](https://docs.openfaas.com/reference/triggers/)
 - [Cron Conector](https://github.com/openfaas/cron-connector)
+- [Plonk stak](https://www.openfaas.com/blog/plonk-stack/)
