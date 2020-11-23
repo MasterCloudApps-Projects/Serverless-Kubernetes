@@ -1,5 +1,8 @@
 # Serverless-Kubernetes
 
+In this repository you will find documentation and examples of alternatives to the proprietary services of cloud providers, such as AWS, GCP, AZURE, ... for Kubernetes
+
+This is the documentation of the final project of: "[Máster Cloud Apps. Desarrollo y despliegue de aplicaciones en la nube](https://www.codeurjc.es/mastercloudapps/)"
 
 ## Project goal
 

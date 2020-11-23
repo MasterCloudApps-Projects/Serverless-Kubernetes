@@ -1,5 +1,8 @@
 # OpenFaas
 
+In this section we will install and test OpenFass and its cli, 
+We will also see some examples of programming with nodejs on how to integrate OpenFaas with other services. 
+
 ## Install
 - [Install OpenFaas](install.md)
 
@@ -23,11 +26,24 @@ More used commands
 - [Docs](https://blog.alexellis.io/quickstart-openfaas-cli/)
 - [GitHub](https://github.com/openfaas/faas-cli)
 
-
-## Format
-Containers with templates build by cli
-
 ## Examples
+All examples have a yaml display file and a folder with the code for it
+
+To run the examples you only need to go to the examples folder and launch .
+```bash
+faas-cli deploy -f <name_of_faas.yaml>
+```
+All containers are published in DockerHub.
+
+To modify and test them you must be logged in DockerHub and modify the yaml file to replace my DockerHub user (oillescas) with yours.
+You also need to download the templates of the OpenFaas functions with the following commands.
+
+```bash
+faas template pull
+faas template pull https://github.com/oillescas/openfaas_nodejs_templates
+```
+
+
 ### REST api (mongo and postgre)
 ### Api minio 
 ### minio-webhook
