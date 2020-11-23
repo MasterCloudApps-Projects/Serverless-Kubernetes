@@ -57,6 +57,18 @@ export class FaasForecast extends LitElement {
       .app-footer a {
         margin-left: 5px;
       }
+
+      ul {
+        list-style: none;
+        /* background-color: grey; */
+        padding: 50px;
+      }
+
+      li {
+        padding: 30px;
+        margin: 30px;
+        border: 1px solid black;
+      }
     `;
   }
 
@@ -73,7 +85,15 @@ export class FaasForecast extends LitElement {
     <ul>
       ${
         this.forecast.map((forecast)=>{
-        return html`<li>${forecast.name}</li>`
+        return html`
+          <li>
+            <p>${forecast.name} - ${forecast.state}</p>
+            <p>
+              Precipitacion: ${forecast.prediccion[0].prob_precipitacion}%
+            </p>
+            <p>Temperatura Maxima: ${forecast.prediccion[0].temperatura.max}º</p>
+            <p>Temperatura Minima: ${forecast.prediccion[0].temperatura.min}º</p>
+          </li>`
       })
     }
     </ul>

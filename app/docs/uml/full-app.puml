@@ -54,7 +54,7 @@ Cluster_Boundary(cluster, "Kubernetes Cluster") {
 }
 
 ' 'Static Web
-Rel(userAlias, staticIngress, "Load Web", "0")
+Rel_L(userAlias, staticIngress, "Load Web", "0")
 Rel_U(staticIngress, minio, "Static web", "0")
 
 
@@ -71,13 +71,13 @@ Rel(fnpf, mongo, "Parse forecast file", "1,8")
 ' Rel_L(fnpf, nats, " ", "Alert forecast")
 
 'API
-Rel(userAlias, ingress, "Get forecast", "2")
+Rel_L(userAlias, ingress, "Get forecast", "2")
 Rel(ingress, ofg, "Get forecast", "2,1")
 Rel(ofg, fngf, "Get forecast", "2,2")
 Rel(fngf, mongo, "Query forecast", "2,3" )
 
 'Admin
-Rel(adminAlias, ingress, "Reload forecast", "3")
+Rel_L(adminAlias, ingress, "Reload forecast", "3")
 Rel(ingress, o2p,"Reload forecast", "3,1")
 Rel(o2p, key, "credentials", "3,2")
 Rel(key, o2p, "credentials", "3,3")

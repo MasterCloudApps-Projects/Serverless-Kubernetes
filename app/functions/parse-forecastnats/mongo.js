@@ -27,7 +27,7 @@ module.exports = async () => {
     }
     
     let db = client.db(database);
-    entryCollection = db.collection("entry");
+    entryCollection = db.collection("forecast");
 
     return {
         saveForecast: async (forecast) => {

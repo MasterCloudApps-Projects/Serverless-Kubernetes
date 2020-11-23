@@ -19,7 +19,7 @@ const AEMET_FILE_EXT = '.xml';
 
 module.exports = async (event, context) => {
   const getStream = bent(AEMET_DOMAIN)
-  const aemetIDs = ['16130','33034','28079','10131'];
+  const aemetIDs = ['16130','45081','28079','35024'];
   // http://www.aemet.es/xml/municipios/localidad_16130.xml
   const promises = aemetIDs.map(async (aemetID) =>{
     const result = await downloadForecast(getStream, aemetID, context);
