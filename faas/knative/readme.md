@@ -9,8 +9,9 @@ Containers
 ## Examples
 
 ### REST api
-
-### Event Broker 
+<!-- TODO 
+En este caso hemos creado una pequeña api resto con NODE simulando la base de datos en memoria. 
+-->
 
 ## Monitoring
 - prometheus and grafana instaled and configured in knative-monitoring namespace
