@@ -1,9 +1,18 @@
-# Argo Events
+# ArgoEvents
 
-![argo events](https://raw.githubusercontent.com/argoproj/argo-events/master/docs/assets/argo-events-top-level.png)
+![Argo Events](https://raw.githubusercontent.com/argoproj/argo-events/master/docs/assets/argo-events-top-level.png)
+
+In this example we deploy ArgoEvents and use event-source of type webhook, to execute an openfaas function through a sensor
 
 
-## Install
+## Prerequisites
+
+[Basic installation of microk8s](../../../Microk8s.md)
+[OpenFaas installed](../../openFaas/install.md)
+[OpenFaas cli installed and config](../../openFaas/readme.md#cli)
+
+
+## Install ArgoEvents
 Create the namespace
 
 ```sh
@@ -18,19 +27,23 @@ kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-events/stable/m
 
 Deploy the eventbus,
 ```sh
-kubectl apply -n argo-events -f https://raw.githubusercontent.com/argoproj/argo
+kubectl apply -n argo-events -f https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/eventbus/native.yaml
 ```
-
 
 ## Test
 Deploy event-source webhook
 ```sh
-kubectl -n argo-events apply -f event-source.yml
+kubectl -n argo-events apply -f event-source.yaml
+```
+
+Deploy OpenFaas function
+```bash
+faas-cli deploy -f https://raw.githubusercontent.com/MasterCloudApps-Projects/Serverless-Kubernetes/master/faas/openFaas/examples/hello-world.ym
 ```
 
 Deploy sensor with triger http to openfaas function
 ```sh
-kubectl -n argo-events apply -f sensor.yml
+kubectl -n argo-events apply -f sensor.yaml
 ```
 
 Open port of webhook pod

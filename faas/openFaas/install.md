@@ -1,7 +1,7 @@
 # Install OpenFaas
 - Prerequisites
 
-Basic installation of microk8s
+[Basic installation of microk8s](../../Microk8s.md)
 
 - Clone repository
 

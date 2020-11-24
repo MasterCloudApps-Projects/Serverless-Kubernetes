@@ -13,7 +13,7 @@ spec:
     - template:
         name: openfaas-trigger
         http:
-          url: http://gateway.openfaas.svc.cluster.local:8080/function/donwload-forecast
+          url: http://gateway.openfaas.svc.cluster.local:8080/function/hello-world
           payload:
             - src:
                 dependencyName: test-dep
