@@ -1,4 +1,4 @@
-# Static deployments
+# Gestion de archivos
 
 ![Static website](../out/StaticPageDeployment/simple-app/simple-app.png)
 

@@ -1,19 +1,32 @@
-# Install microk8s
+# Instalar microk8s
 
-## Create virtualmachine
+Para que las pruebas sean lo mas homogeneas para todos los sistemas operativos
+las instrucciones de instalacion del cluster microk8s se especifica la creación de una maquina virtual 
+con multipass, aunque no es necesario en linux. 
+
+En las ultimas versiones de microk8s no es necesario utilizar multipass ya que en entornos distintos a linux
+la maquina virtual es transparente, en estas pruebas hemos preferido crear las maquinas virtuales a mano
+para tener mas control de las mismas.
+
+## Instalar Multipass
+ - [Linux](https://multipass.run/docs/installing-on-linux)
+ - [Windows](https://multipass.run/docs/installing-on-windows)
+ - [MacOs](https://multipass.run/docs/installing-on-macos)
+
+## Crear una maquina virtual
 
 ```shell
 multipass launch --mem 10G --cpus 6 --disk 20G --name serverlessk8s
 ```
 
-## Intall microk8s
+## Intalar microk8s en la maquina virtual
 
-access to vm
-
+Acceder a la vm 
 ```shell
 multipass shell serverlessk8s
 ```
 
+Installar el snap de microk8s en la maquina virtual
 ```shell
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s ubuntu
@@ -21,7 +34,7 @@ sudo chown -f -R ubuntu ~/.kube
 
 ```
 
-## Enable addons
+## Habilitar addons basicos
 
 ```shell
 microk8s.enable dns dashboard registry ingress prometheus metallb
@@ -33,7 +46,7 @@ microk8s.enable dns dashboard registry ingress prometheus metallb
 sudo snap alias microk8s.kubectl kubectl
 ```
 
-you can get de config for remote kubectl, lens, or other took with
+puede obtener la configuración de cubernetes para kubectl remoto, lens u otra herramienta con el comando
 
 ```shell
 microk8s.config

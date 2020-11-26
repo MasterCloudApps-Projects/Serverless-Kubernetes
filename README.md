@@ -1,40 +1,45 @@
 # Serverless-Kubernetes
+Este repositorio guarda la documentacion y pruebas realizadas para el TFM del 
+"[Máster Cloud Apps. Desarrollo y despliegue de aplicaciones en la nube](https://www.codeurjc.es/mastercloudapps/)" 
+de la Universidad Rey Juan Carlos.
 
-In this repository you will find documentation and examples of alternatives to the proprietary services of cloud providers, such as AWS, GCP, AZURE, ... for Kubernetes
-
-This is the documentation of the final project of: "[Máster Cloud Apps. Desarrollo y despliegue de aplicaciones en la nube](https://www.codeurjc.es/mastercloudapps/)"
-
-## Project goal
-
-1. [Databases](#databases)
-2. [File Management](#file-management)
-3. [Functions as a service (Faas)](#functions-as-a-service-faas)
-4. [Message queue and Event management](#message-queue-and-event-management)
-5. [User Management](#user-management)
-6. [Example App](#example-app)
+Este TFM consiste en el estudio de las alternativas en Kubernetes a los servicios Serverless 
+que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 
 
-### Databases
-| AWS      | Azure     | GCP           |
-|----------|-----------|---------------|
-| dynamodb | Cosmos DB | Cloud Spanner |
+## Servicios 
+
+1. [Bases de datos](#bases-de-datos)
+2. [Gestion de archivos](#gestion-de-archivos)
+3. [Funciones como servicio (Faas)](#funciones-como-servicio-faas)
+4. [Colas de mensageria y gestion de eventos](#colas-de-mensageria-y-gestion-de-eventos)
+5. [Gestión de usuarios](#gestin-de-usuarios)
 
 
-the alternative to the DynamoDB,Cosmos,... goes through a database operator such as:
-#### Examples
-- [x] [Mongodb operator](Databases/perconaMongodb/readme.md)
-- [x] [Postgresql operator](Databases/zalandoPostgresOperator/readme.md)
+### Bases de datos
+| AWS                                             | Azure                                                              | GCP                                               |
+|-------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------|
+| [dynamodb](https://aws.amazon.com/es/dynamodb/) | [Cosmos DB](https://azure.microsoft.com/es-es/services/cosmos-db/) | [Cloud Spanner](https://cloud.google.com/spanner) |
+
+Las alternativas a las bases de datos administradas por los proveedores de cloud serian los Operadores Kubernetes de bases de datos, 
+en este trabajo vamos a instalar y probar 2 de ellos, el operador de MongoDB de Percona y el operador de PostgreSQL de Zalando.
+
+- [ ] [Mongodb operator](Databases/perconaMongodb/readme.md)
+- [ ] [Postgresql operator](Databases/zalandoPostgresOperator/readme.md)
 
 
 
-### File Management
-| AWS | Azure        | GCP           |
-|-----|--------------|---------------|
-| s3  | Blob Storage | Cloud Storage |
+### Gestion de archivos
+| AWS                                 | Azure                                                                     | GCP                                                         |
+|-------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------|
+| [s3](https://aws.amazon.com/es/s3/) | [Blob Storage](https://azure.microsoft.com/es-es/services/storage/blobs/) | [Cloud Storage](https://cloud.google.com/storage?hl=es-419) |
 
-- [x] [minio](StaticPageDeployment/readme.md)
+Otro servicio que ofrecen los proveedores de cloud son la gestion y almacenamiento de archivos en este caso vamos a instalar y probar minio,
+que implementa un api compatible con AWS S3 y que posee un operador de Kubernetes que nos permite el autoescalado.
 
-### Functions as a service (Faas)
+- [ ] [Gestion de archivos](GestionArchivos/readme.md)
+
+### Funciones como servicio (Faas)
 | AWS    | Azure     | GCP             |
 |--------|-----------|-----------------|
 | Lambda | Functions | Cloud Functions |
@@ -43,20 +48,36 @@ the alternative to the DynamoDB,Cosmos,... goes through a database operator such
 - [ ] [openfaas](faas/openfaas/readme.md)
 
 
-### Message queue and Event management
+### Colas de mensageria y gestion de eventos
+| AWS                                                    | Azure                                                                       | GCP                                                   |
+|--------------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------|
+| [SQS](https://aws.amazon.com/es/sqs/)                  | [Service Bus](https://azure.microsoft.com/es-es/services/service-bus/)      | [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs) |
+| [SNS](https://aws.amazon.com/es/sns/)                  | [Queue Storage](https://azure.microsoft.com/es-es/services/storage/queues/) |                                                       |
+| [Event Bridge](https://aws.amazon.com/es/eventbridge/) | [Event Grid](https://azure.microsoft.com/es-es/services/event-grid/)        |                                                       |
+
+Hasta ahora las pruebas que hemos hecho han lanzado las funciones ante una peticion http
+en esta seccion vamos a comprobar com podemos ejecutar estas funciones por otros mecanismos.
+Concretamente probaremos los sistemas de colas integradas dentro de Knative y OpenFaas y tambien
+intralaremos y probaremos Argo Events, un orquestador de eventos que nos permite ejecutar entre otras cosas funciones OpenFaas.
 
 - [ ] [Knative](faas/Knative/events.md)
-- [ ] [Openfaas](faas/openfass/events.md)
+- [ ] [Openfaas](faas/openFaas/events.md)
 - [ ] [Argo Events](faas/Events/argo-events/readme.md)
 
-### User Management
-| AWS     | Azure                | GCP               |
-|---------|----------------------|-------------------|
-| cognito | Active Directory B2C | Identity Platform |
+### Gestión de usuarios
+| AWS                                           | Azure                                                                                                        | GCP                                       |
+|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------|
+| [cognito](https://aws.amazon.com/es/cognito/) | [Active Directory B2C](https://azure.microsoft.com/es-es/services/active-directory/external-identities/b2c/) | [Cloud IAM](https://cloud.google.com/iam) |
 
-- [ ] [keycloak](UsersManagement/readme.md)
+En esta sección vamos a instalar Keycloak para la gestion de usuarios dentro del ecosistema kubernetes, como alternativa a los sistemas de identidad y acceso de los proveedores de cloud, 
+además vamos a implementar varios ejemplos de cómo integrarlos en las funciones OpenFaas que hemos desarrollado anteriormente.
 
-### Example app
+- [ ] [Keycloak](Keycloack/readme.md)
+
+## Aplicacion de Ejemplo
+
+Para terminar hemos desarrollado una pequeña aplicacion de ejemplo donde ponemos en común alguno de los servicios que hemos probado anteriormente.
+
 - [ ] [App](app/readme.md)
 
 

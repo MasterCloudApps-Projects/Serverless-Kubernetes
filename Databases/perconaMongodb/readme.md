@@ -1,4 +1,6 @@
 # Percona mongodb operator
+<!-- TODO -->
+En esta seccion vamos a instalar el operador de mongodb de Percona y vamos a desplegar un servidor mongo, además vamos a desplegar un pod con un cliente para pobar esa base de datos
 
 
 ## Install

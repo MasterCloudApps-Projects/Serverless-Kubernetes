@@ -1,4 +1,7 @@
 # Zalando Postgesql Opertaor 
+<!-- TODO -->
+En esta sección veremos como instalar el operador de Postgresql de Zalando ademas de crear una base de datos.
+Para validar la instalcion desplegaremos un pod con un cliente para conectarnos al servidor postgreSQL
 
 ## Install 
 - [Install postgresql operator](install.md)

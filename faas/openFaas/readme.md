@@ -26,6 +26,14 @@ More used commands
 - [Docs](https://blog.alexellis.io/quickstart-openfaas-cli/)
 - [GitHub](https://github.com/openfaas/faas-cli)
 
+## Templates
+El desarrollo de las funciones en OpenFaas se basan en templates. En este ejemplo hemos desarrollado 2 plantillas basadas en la plantilla original node12
+### Custom templates
+#### node12-files
+Esta plantilla añande el plugin de files al servidor express que posee la plantilla oficial de node12, esto hace que se puedan recibir de una manera sencilla archivos via http.
+#### node12-nats
+Esta plantilla parsea la cabecera de manera manual para facilitar la lectura de una cola de mensajes Nats.
+
 ## Examples
 All examples have a yaml display file and a folder with the code for it
 
@@ -44,17 +52,16 @@ faas template pull https://github.com/oillescas/openfaas_nodejs_templates
 ```
 
 
-### REST api (mongo and postgre)
+### REST api (mongo and -postgre-)
+<!-- TODO -->
+En estos dos ejemplos hemos creado 2 ejemplos de conexion a base de datos en uno de ellos un crud contra mongo y en el otro una pequeña api para gestion de dispositivos.
+- En el ejemplo con mongo es necesario tener desplegado el [operador de mongo](../../Databases/perconaMongodb/readme.md) y una base de datos mongo.
+- Mientras que en el ejemplo de postgre necesitaremos el [operador de postgresql](../../Databases/zalandoPostgresOperator/readme.md) y una base de datos
+
 ### Api minio 
-### minio-webhook
-### nats queme
-### secure function
-
-## Templates
-
-### Custom templates
-- node12-files
-- node12-nats
+<!-- TODO -->
+En este ejemplo hemos expuesto la gestion de archivos de minio via un api REST hace uso la la template [node12-files](#node12-files) para poder recibir y enviar archivos a Minio.
+Para poder ejecutarla necesitamos [instalar minio](../../StaticPageDeployment/install-minio.md) antes de desplegar la funcion.  
 
 ## Monitoring
 - prometheus instaled in openfaas namespace

@@ -2,6 +2,14 @@
 
 ![Load Web](../../out/UsersManagement/OpenFaas/secure-openfaas/secure-openfaas.png)
 
+## Examples
+
+### Secure function
+<!-- TODO 
+En este ejemplo desplegamos una funcion y la exponemos al exterior con un ingress securizandolo con oaut-proxy
+-->
+
+
 
 ## Links
 
