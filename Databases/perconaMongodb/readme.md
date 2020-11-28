@@ -8,7 +8,7 @@ además vamos a desplegar un pod con un cliente para probar esa base de datos.
 ## Instalación
 - [Instalación Percona MongoDb Operator](install.md)
 
-## Create mongodb cluster
+## Creamos nuestro cluster MongoDb
 Después de instalar el operador en nuestro cluster,  probaremos el despliegue de un "cluster MongoDb" en este caso estamos desplegando un cluster con nombre `my-mongodb` 
 y que de início tendrá 3 replicas.
 

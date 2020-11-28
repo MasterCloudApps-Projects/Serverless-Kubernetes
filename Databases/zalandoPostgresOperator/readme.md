@@ -1,28 +1,46 @@
 # Zalando Postgesql Opertaor 
-<!-- TODO -->
-En esta sección veremos como instalar el operador de Postgresql de Zalando ademas de crear una base de datos.
-Para validar la instalcion desplegaremos un pod con un cliente para conectarnos al servidor postgreSQL
 
-## Install 
-- [Install postgresql operator](install.md)
+En esta sección veremos como instalar el operador de PostgreSql de Zalando ademas de crear una base de datos.
+
+Para validar la instalación desplegaremos un pod con un cliente para conectarnos al servidor postgreSQL
+
+- [Documentación Oficial](https://postgres-operator.readthedocs.io/)
+
+## Instalación 
+- [Instalación de Zalando PostgreSql Operator](install.md)
 
 
-## Test cluster
+## Creamos nuestro cluster PostgreSql
 
-Retrive admin pasword and launch pod with postgresql client
+Una vez instalado el operador de PostgreSql vamos a desplegar nuestro cluster PostgreSql. 
+
+En este caso le daremos el nombre de `acid-minimal-cluster` con 2 instancias.
+Este operador nos permite crear y configurar bases datos y sus usuarios en el manifest de despliegue del cluster.
+
+```shell
+kubectl create -f minimal-postgres-manifest.yaml
+```
+## Probamos el cluster
+
+En este caso el operador de PostgreSql crea una serie de secretos, uno por cada usuario que creamos en el despliegue del cluster.  Recuperamos pasword para el usuario postgres (administrador) de nuestra base de datos.
+
 ```shell
 export PGPASSWORD=$(kubectl get secret postgres.acid-minimal-cluster.credentials.postgresql.acid.zalan.do -o 'jsonpath={.data.password}' | base64 -d)
-
-kubectl run pgsql-postgresql-client --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:11.7.0-debian-10-r9 --env="PGPASSWORD=$PGPASSWORD" --command -- psql --host acid-minimal-cluster -U postgres
 ```
 
-you can see the postgres shell
+Para probar este cluster de PostgreSql vamos a lanzar un pod dentro de Kubernetes con 
+un cliente de PostgreSql.
+
+```bash
+kubectl run pgsql-postgresql-client --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:11.7.0-debian-10-r9 --env="PGPASSWORD=$PGPASSWORD" --command -- psql --host acid-minimal-cluster -U postgres
+```
+Si todo ha ido bien ahora podremos ver la shell de PostgreSql.
 
 ```shell
 postgres=#
 ```
 
-and you list a databases
+y podremos por ejemplo listar las bases de datos. 
 
 ```shell
 postgres=# \l
@@ -38,7 +56,3 @@ postgres=# \l
            |           |          |             |             | postgres=CTc/postgres
 (5 rows)
 ```
-
-
-## Links
-- [Official docs](https://postgres-operator.readthedocs.io/)

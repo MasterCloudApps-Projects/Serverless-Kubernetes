@@ -39,8 +39,3 @@ kubectl port-forward svc/postgres-operator-ui 8081:8081
 
 visit <http://localhost:8081>
 
-## Deploy example cluster
-
-```shell
-kubectl create -f manifests/minimal-postgres-manifest.yaml
-```
