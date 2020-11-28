@@ -40,9 +40,9 @@ que implementa un api compatible con AWS S3 y que posee un operador de Kubernete
 - [ ] [Gestion de archivos](GestionArchivos/readme.md)
 
 ### Funciones como servicio (Faas)
-| AWS    | Azure     | GCP             |
-|--------|-----------|-----------------|
-| Lambda | Functions | Cloud Functions |
+| AWS                                         | Azure                                                              | GCP                                                   |
+|---------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------|
+| [Lambda](https://aws.amazon.com/es/lambda/) | [Functions](https://azure.microsoft.com/es-es/services/functions/) | [Cloud Functions](https://cloud.google.com/functions) |
 
 - [ ] [knative](faas/knative/readme.md)
 - [ ] [openfaas](faas/openfaas/readme.md)

@@ -3,13 +3,8 @@ kind: PerconaServerMongoDB
 metadata:
   name: my-mongodb
 spec:
-#  platform: openshift
-#  clusterServiceDNSSuffix: svc.cluster.local
   image: percona/percona-server-mongodb:4.2.8-8
   imagePullPolicy: Always
-#  imagePullSecrets:
-#    - name: private-registry-credentials
-#  runUid: 1001
   allowUnsafeConfigurations: true
   updateStrategy: SmartUpdate
   upgradeOptions:
@@ -27,35 +22,6 @@ spec:
     size: 3
     affinity:
       antiAffinityTopologyKey: "none"
-#      advanced:
-#        nodeAffinity:
-#          requiredDuringSchedulingIgnoredDuringExecution:
-#            nodeSelectorTerms:
-#            - matchExpressions:
-#              - key: kubernetes.io/e2e-az-name
-#                operator: In
-#                values:
-#                - e2e-az1
-#                - e2e-az2
-#    tolerations: 
-#    - key: "node.alpha.kubernetes.io/unreachable"
-#      operator: "Exists"
-#      effect: "NoExecute"
-#      tolerationSeconds: 6000
-#    priorityClassName: high-priority
-#    annotations:
-#      iam.amazonaws.com/role: role-arn
-#    labels:
-#      rack: rack-22
-#    nodeSelector:
-#      disktype: ssd
-#    livenessProbe:
-#      failureThreshold: 4
-#      initialDelaySeconds: 60
-#      periodSeconds: 30
-#      successThreshold: 1
-#      timeoutSeconds: 5
-#      startupDelaySeconds: 7200
     podDisruptionBudget:
       maxUnavailable: 1
 #      minAvailable: 0
@@ -67,44 +33,12 @@ spec:
       size: 1
       affinity:
        antiAffinityTopologyKey: "kubernetes.io/hostname"
-#       advanced:
-#         nodeAffinity:
-#           requiredDuringSchedulingIgnoredDuringExecution:
-#             nodeSelectorTerms:
-#             - matchExpressions:
-#               - key: kubernetes.io/e2e-az-name
-#                 operator: In
-#                 values:
-#                 - e2e-az1
-#                 - e2e-az2
-#     tolerations: 
-#     - key: "node.alpha.kubernetes.io/unreachable"
-#       operator: "Exists"
-#       effect: "NoExecute"
-#       tolerationSeconds: 6000
-#     priorityClassName: high-priority
-#     annotations:
-#       iam.amazonaws.com/role: role-arn
-#     labels:
-#       rack: rack-22
-#     nodeSelector:
-#       disktype: ssd
-#    schedulerName: "default"
     resources:
       limits:
         cpu: "300m"
         memory: "0.5G"
-      # requests:
-      #   cpu: "300m"
-      #   memory: "0.5G"
     volumeSpec:
-#      emptyDir: {}
-#      hostPath:
-#        path: /data
-#        type: Directory
       persistentVolumeClaim:
-#        storageClassName: standard
-#        accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
             storage: 3Gi
@@ -142,14 +76,6 @@ spec:
       mode: slowOp
       slowOpThresholdMs: 100
       rateLimit: 100
-#    loadBalancerSourceRanges:
-#      - 10.0.0.0/8
-#    serviceAnnotations:
-#      service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http   
-#    auditLog:
-#      destination: file
-#      format: BSON
-#      filter: '{}'
   backup:
     enabled: true
     restartOnFailure: true
