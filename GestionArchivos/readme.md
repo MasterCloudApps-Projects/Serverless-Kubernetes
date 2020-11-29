@@ -15,10 +15,12 @@ Dentro de los posibles usos que se dan normalmente al almacenamiento de ficheros
 1. Instalar minio client(mc) para el sistema operativo que necesites.
      - [Minio Client](https://github.com/minio/mc)
 
+1. [Recuperamos las claves de acceso](install-minio.md#recuperando-las-keys-de-acceso)
+
 1. Configurar mc para atacar a nuestro minio
     ```shell
     # mc config host add minio-tfm http://<VirtualMachine-IP>:<External-Port> YOURACCESSKEY YOURSECRETKEY S3v4
-    mc config host add minio-tfm http://192.168.0.100:9000 YOURACCESSKEY YOURSECRETKEY
+    mc config host add minio-tfm http://192.168.64.12:31131 YOURACCESSKEY YOURSECRETKEY
     ```
 
  1. Creamos y configuramos un bucket
@@ -36,7 +38,6 @@ Dentro de los posibles usos que se dan normalmente al almacenamiento de ficheros
     ```shell
     kubectl apply -f ingress.yaml
     ```
-
 
 Podemos visitar el sitio en:
 <https://miniostatic.192.168.0.100.nip.io/>

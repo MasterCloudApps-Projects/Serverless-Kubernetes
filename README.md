@@ -37,7 +37,7 @@ en este trabajo vamos a instalar y probar 2 de ellos, el operador de MongoDB de 
 Otro servicio que ofrecen los proveedores de cloud son la gestión y almacenamiento de archivos en este caso vamos a instalar y probar minio,
 que implementa un api compatible con AWS S3 y que posee un operador de Kubernetes que nos permite el autoescalado.
 
-- [ ] [Gestión de archivos](GestionArchivos/readme.md)
+- [X] [Gestión de archivos](GestionArchivos/readme.md)
 
 ### Funciones como servicio (Faas)
 | AWS                                         | Azure                                                              | GCP                                                   |
