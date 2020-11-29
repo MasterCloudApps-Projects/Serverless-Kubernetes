@@ -58,3 +58,9 @@ o
 # fuera de la maquina virtual
 multipass exec serverlessk8s -- sudo microk8s config 
 ```
+
+
+## Acceso al proyecto dentro de la maquina virtual
+```bash
+multipass mount . serverlessk8s:/project
+```

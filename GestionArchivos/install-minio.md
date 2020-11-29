@@ -1,23 +1,21 @@
 # install minio
 
 ## Prerequisitos
+[Instalación básica de MicroK8s](../../Microk8s.md)
 
-Basic install microk8s
+- Instalar helm3 en microk8s    
+    ```shell
+    microk8s.enable helm3
+    sudo snap alias microk8s.helm3 helm
+    ```
 
-install helm3 in microk8s
-
-```shell
-microk8s.enable helm3
-sudo snap alias microk8s.helm3 helm
-```
-
-## Whith helm 3
+## Instalar la aplicación con helm 3
 
 ```shell
 helm repo add minio https://helm.min.io/
 helm install --set service.type=LoadBalancer my-minio minio/minio
 ```
-
+Comprobamos que se ha instalado correctamente.
 ```shell
 kubectl get svc --namespace default -l release=my-minio
 NAME       TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)          AGE
