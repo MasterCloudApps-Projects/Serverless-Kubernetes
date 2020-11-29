@@ -1,3 +1,5 @@
+![Master Cloud apps ](./out/masterCloudApps.png)
+
 # Serverless-Kubernetes
 Este repositorio guarda la documentación y pruebas realizadas para el TFM del 
 "[Máster Cloud Apps. Desarrollo y despliegue de aplicaciones en la nube](https://www.codeurjc.es/mastercloudapps/)" 
@@ -43,6 +45,8 @@ que implementa un api compatible con AWS S3 y que posee un operador de Kubernete
 | AWS                                         | Azure                                                              | GCP                                                   |
 |---------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------|
 | [Lambda](https://aws.amazon.com/es/lambda/) | [Functions](https://azure.microsoft.com/es-es/services/functions/) | [Cloud Functions](https://cloud.google.com/functions) |
+
+Todo este ecosistema no podria funcionar si no tengo donde ejecutar código, En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
 
 - [ ] [Knative](faas/knative/readme.md)
 - [ ] [Openfaas](faas/openfaas/readme.md)
