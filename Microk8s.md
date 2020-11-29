@@ -15,41 +15,42 @@ para tener mas control de las mismas.
 
 ## Crear una maquina virtual
 
-```shell
+```Bash
 multipass launch --mem 10G --cpus 6 --disk 20G --name serverlessk8s
 ```
 
 ## Intalar microk8s en la maquina virtual
 
 Acceder a la vm 
-```shell
+```Bash
 multipass shell serverlessk8s
 ```
 
 Instalar el snap de microk8s en la maquina virtual
-```shell
+```Bash
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s ubuntu
 sudo chown -f -R ubuntu ~/.kube
 
 ```
-Después de cambiar los permisos es necesario salir y volver a entrar en la shell de la maquina virtual para que estos tengan efecto.
+Después de cambiar los permisos es necesario salir y volver a entrar en la Bash de la maquina virtual para que estos tengan efecto.
 
 ## Habilitar addons basicos
 
-```shell
-microk8s.enable dns dashboard registry ingress prometheus metallb
+```Bash
+microk8s enable dns dashboard registry ingress prometheus
+microk8s enable metallb
 ```
 
 ## Alias kubectl
 
-```shell
+```Bash
 sudo snap alias microk8s.kubectl kubectl
 ```
 
 puede obtener la configuración de Kubernetes para kubectl remoto, lens u otra herramienta con el comando
 
-```shell
+```Bash
 # dentro de la maquina virtual
 microk8s.config
 ```

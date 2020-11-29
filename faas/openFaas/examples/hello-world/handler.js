@@ -1,12 +1,12 @@
-"use strict"
+'use strict'
 
-module.exports = (event, context) => {
-    let err;
-    const result =             {
-        status: "You said: " + JSON.stringify(event.body)
-    };
+module.exports = async (event, context) => {
+  const result = {
+    'status': 'Received input: ' + JSON.stringify(event.body)
+  }
 
-    context
-        .status(200)
-        .succeed(result);
+  return context
+    .status(200)
+    .succeed(result)
 }
+

@@ -3,7 +3,7 @@ provider:
   name: openfaas
 functions:
   hello-world:
-    lang: node10-express
+    lang: node12
     handler: ./hello-world
     image: oillescas/hello-world:latest
 

@@ -5,8 +5,6 @@ const app = express();
 const services = require("./mockup-services");
 const port = process.env.PORT || 8080;
 
-
-// Using middlewares to parse json response objects
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 

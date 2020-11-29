@@ -1,19 +1,41 @@
 # Kantive
+*TODO*
 
-## Install
-- [Install Knative](install.md)
+En esta sección vamos a instalar y probar Knative, ademas de desplegar Knative vamos a desplegar una función que nos servirá un API REST.
+[Google clod run](https://cloud.google.com/run/) esta basado en Knative.
 
-## Format
-Containers
+- [Documentación oficial](https://knative.dev/)
 
-## Examples
+## Instalación
+- [Instalación Knative](install.md)
+
+## Como desarrollar 
+
+El desarrollo en Knative es simplemente montar un contenedor Docker con cualquier lenguaje y crear un descriptor YAML para desplegar el CRD del servicio Knative
+
+## Ejemplos
 
 ### REST api
-<!-- TODO 
 En este caso hemos creado una pequeña api resto con NODE simulando la base de datos en memoria. 
--->
 
-## Monitoring
+#### Instalación 
+Aplicamos el archivo yaml con el servicio Knative
+```bash
+kubectl apply --filename examples/REST/service.yaml
+```
+
+#### Llamada 
+Recuperamos la url del servicio Knative
+```
+kubectl get ksvc knative-rest  --output=custom-columns=NAME:.metadata.name,URL:.status.url
+NAME           URL
+knative-rest   http://knative-rest.default.example.com
+```
+
+
+
+## Monitorización
+La instalación de Knative   ¡¡
 - prometheus and grafana instaled and configured in knative-monitoring namespace
 
 ## Links
