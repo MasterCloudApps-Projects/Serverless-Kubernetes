@@ -9,14 +9,6 @@ En esta sección instalaremos y probaremos OpenFaas y su cli. También veremos a
 
 ## Cli
 - [Instalación de faas-cli](https://docs.openfaas.com/cli/install/)
-
-More used commands
-
-
-    > `faas-cli logs NAME` command will stream the logs for the named function
-
-    > faas template pull https://github.com/oillescas/openfaas_nodejs_templates
-
 - [Docs](https://blog.alexellis.io/quickstart-openfaas-cli/)
 - [GitHub](https://github.com/openfaas/faas-cli)
 
@@ -81,6 +73,11 @@ faas-cli up -f hello-world.yml
     faas-cli deploy -f hello-world.yml
     ```
 En un solo comando, si queremos lanzar solo uno de esos pasos solo tenemos que lanzar los comandos anteriores.
+
+Podemos consultar los logs de la ejecución de la función con el comando
+```bash
+faas-cli logs hello-world
+```
 
 Ademas podemos crear nuestras propias plantillas para añadir lenguajes o para abstraer partes comunes del desarrollo en varias faas. En este ejemplo hemos desarrollado 2 plantillas basadas en la plantilla original node12.
 
