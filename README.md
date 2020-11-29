@@ -49,7 +49,7 @@ que implementa un api compatible con AWS S3 y que posee un operador de Kubernete
 Todo este ecosistema no podria funcionar si no tengo donde ejecutar código, En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
 
 - [ ] [Knative](faas/knative/readme.md)
-- [ ] [Openfaas](faas/openfaas/readme.md)
+- [ ] [Openfaas](faas/openFaas/readme.md)
 
 
 ### Colas de mensajería y gestión de eventos
