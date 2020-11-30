@@ -10,7 +10,7 @@ Al no usar servidores es necesario un servicio que se encargue de gestionar los 
 Dentro de los posibles usos que se dan normalmente al almacenamiento de ficheros, es el despliegue de las partes estáticas de los sitios web, en esta sección veremos un ejemplo de como desplegar uno. Además en la sección de funciones podremos ver como integrar una función OpenFaaS con el api de Minio.
 
 ### Despliegue de un sitio estático
-![Static website](../out/StaticPageDeployment/simple-app/simple-app.png)
+![Static website](../out/GestionArchivos/simple-app/simple-app.png)
 
 1. Instalar minio client(mc) para el sistema operativo que necesites.
      - [Minio Client](https://github.com/minio/mc)

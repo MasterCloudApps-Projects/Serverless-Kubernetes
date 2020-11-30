@@ -1,6 +1,6 @@
 # Secure openFaas function
 
-![Load Web](../../out/UsersManagement/OpenFaas/secure-openfaas/secure-openfaas.png)
+![Load Web](../../out/Keycloack/OpenFaas/secure-openfaas/secure-openfaas.png)
 
 ## Examples
 

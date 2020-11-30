@@ -1,7 +1,7 @@
 # Secure ingress
 
 
-![Graf](../../out/UsersManagement/simple-ingress/simple-ingress/simple-ingress.png)
+![Graf](../../out/Keycloack/simple-ingress/simple-ingress/simple-ingress.png)
 
 
 

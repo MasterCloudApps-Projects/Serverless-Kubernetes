@@ -38,8 +38,8 @@ Serve static html
 ## How to install
 - Prerequisites
     - [Basic installation of microk8s](../Microk8s.md)
-    - [install minio & minio client](../StaticPageDeployment/install-minio.md)
-    - [Install postgresql operator](../Databases/zalandoPostgresOperator/install.md)
+    - [install minio & minio client](../GestionArchivos/install-minio.md)
+    - [Install postgresql operator](../Databases/zalandoPostgresOperator/install.md) NOOOO el de mongo
 
 - deploy and configure minio
     - [instructions](docs/config-minio.md)
