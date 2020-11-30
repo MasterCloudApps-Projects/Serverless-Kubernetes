@@ -1,5 +1,7 @@
 # Percona MongoDb operator
 
+![Percona Kubernetes Operator](https://www.percona.com/sites/all/themes/Porto_sub/img/doc-product-logos/kubernetes-mongodb-logo.png)
+
 En esta sección vamos a instalar el operador de mongodb de Percona y vamos a desplegar un servidor mongo, 
 además vamos a desplegar un pod con un cliente para probar esa base de datos.
 
