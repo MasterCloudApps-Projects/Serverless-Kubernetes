@@ -12,6 +12,12 @@ En esta sección instalaremos y probaremos OpenFaas y su cli. También veremos a
 - [Docs](https://blog.alexellis.io/quickstart-openfaas-cli/)
 - [GitHub](https://github.com/openfaas/faas-cli)
 
+Para la configuración de faas-cli usaremos el servicio gateway-external que vimos en la instalación y el pasword que generamos, que también podemos recuperar con el siguiente comando.
+
+```bash
+kubectl get secret basic-auth -n openfaas -o 'jsonpath={.data.basic-auth-password}'| base64 -d
+```
+
 ## Desarrollo
 
 El desarrollo de las funciones en OpenFaas se basan en templates. Para comenzar debemos ejecutar la siguiente instrucción para crear una nueva función:

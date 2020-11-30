@@ -1,21 +1,27 @@
-# Install OpenFaas
-- Prerequisites
+# Instalación
 
-[Basic installation of microk8s](../../Microk8s.md)
 
-- Clone repository
+Guía de instalación paso por paso de [Openfaas](https://www.openfaas.com/).
+
+## Prerequisitos
+
+[Instalación Básica de MicroK8s](../../Microk8s.md)
+
+
+# Pasos
+- Empezamos clonando el repositorio
 
 ```shell
 git clone https://github.com/openfaas/faas-netes
 ```
 
-- Create namespaces
+- Creamos los namespaces necesarios (openfaas y openfaas-fn)
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
 ```
 
-- Generate password
+- Generamos una password aleatoria.
 
 ```shell
 # generate a random password
@@ -26,9 +32,19 @@ kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-password="$PASSWORD"
 ```
 
-- Deploy openfaas
+- Desplegamos openfaas
 
 ```shell
 cd faas-netes && \
 kubectl apply -f ./yaml
 ```
+
+- y finalmente comprobamos la instalación 
+    Openfaas despliega un servicio llamado gateway-external que expone un node port y por tanto podemos acceder a el desde la ip de nuesta maquina virtual.
+    ```bash
+    kubectl -n openfaas get service/gateway-external
+    NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+    gateway-external   NodePort   10.152.183.80   <none>        8080:31112/TCP   83d
+    ```
+    y ya podemos acceder a ui de openfaas usando el usuario admin y la pasword que generamos antes
+    <http://192.168.0.100:31112>
