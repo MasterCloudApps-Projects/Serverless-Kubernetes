@@ -131,8 +131,11 @@ kubectl apply -f ingress-grafana.yml
 
 accedes al dominio de ingress <http://grafana.192.168.0.100.nip.io/> con usuario/password admin/admin después del primer login deberás cambiar el password.
 ![login](../../out/capturas/LoginGrafana.png)
+
 Una vez logado añadimos el prometeus del namespace openfaas como data source.
+
 ![Prometheus data source](../../out/capturas/datasource.png)
+
 Cuando ya tenemos este nuevo datasource importamos el siguiente dashboard de la web de grafana
 
 <https://grafana.com/grafana/dashboards/3434>
@@ -152,5 +155,4 @@ Y ya podemos nuestro dashboard.
 ## Links
 - [Auto Scaling](https://docs.openfaas.com/architecture/autoscaling/)
 - [Triggers](https://docs.openfaas.com/reference/triggers/)
-- [Cron Conector](https://github.com/openfaas/cron-connector)
 - [Plonk stak](https://www.openfaas.com/blog/plonk-stack/)
