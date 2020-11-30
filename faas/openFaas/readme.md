@@ -103,21 +103,44 @@ faas template pull https://github.com/oillescas/openfaas_nodejs_templates
 ```
 
 
-### REST api (mongo and -postgre-)
-En estos dos ejemplos hemos creado 2 ejemplos de conexion a base de datos en uno de ellos un crud contra mongo y en el otro una pequeña api para gestion de dispositivos.
+### REST api (mongo and -postgresql-)
+En estos dos ejemplos hemos creado 2 ejemplos de conexión a base de datos en uno de ellos un crud contra mongo y en el otro una pequeña api para gestion de dispositivos.
 - En el ejemplo con mongo es necesario tener desplegado el [operador de mongo](../../Databases/perconaMongodb/readme.md) y una base de datos mongo.
-- Mientras que en el ejemplo de postgre necesitaremos el [operador de postgresql](../../Databases/zalandoPostgresOperator/readme.md) y una base de datos
+- Mientras que en el ejemplo de postgresql necesitaremos el [operador de postgresql](../../Databases/zalandoPostgresOperator/readme.md) y una base de datos
 
 ### Api minio 
-<!-- TODO -->
-En este ejemplo hemos expuesto la gestion de archivos de minio via un api REST hace uso la la template [node12-files](#node12-files) para poder recibir y enviar archivos a Minio.
-Para poder ejecutarla necesitamos [instalar minio](../../GestionArchivos/install-minio.md) antes de desplegar la funcion.  
+En este ejemplo hemos expuesto la gestión de archivos de minio via un api REST hace uso la la template [node12-files](#node12-files) para poder recibir y enviar archivos a Minio.
+Para poder ejecutarla necesitamos [instalar minio](../../GestionArchivos/install-minio.md) antes de desplegar la función.  
 
 ## Monitoring
-- prometheus instaled in openfaas namespace
-- grafana dashboads
-    - https://grafana.com/grafana/dashboards/3434
-    - https://grafana.com/grafana/dashboards/3526
+Lan instalación de open faas deja instalado en en namespace openfaas un servicio de prometheus que monitoriza la instalación.
+Y en microk8s en el Namespace monitoring tenemos un servicio de grafana, con los dashboard del propio k8s, y vamos a configurar un dashboard para openfaas.
+
+Primeramente tenemos que acceder a grafana, podremos hacer un proxy al puerto, pero por comodidad vamos a exponer el servicio con un ingress.
+
+```bash
+kubectl apply -f ingress-grafana.yml
+```
+
+accedes al dominio de ingress <http://grafana.192.168.0.100.nip.io/> con usuario/password admin/admin después del primer login deberás cambiar el password.
+![login](../../out/capturas/LoginGrafana.png)
+Una vez logado añadimos el prometeus del namespace openfaas como data source.
+![Prometheus data source](../../out/capturas/datasource.png)
+Cuando ya tenemos este nuevo datasource importamos el siguiente dashboard de la web de grafana
+
+<https://grafana.com/grafana/dashboards/3434>
+
+- Paso 1
+    
+    ![Prometheus data source](../../out/capturas/importDashboard1.png)
+- Paso 2
+    ![Prometheus data source](../../out/capturas/ImportDashboard2.png)
+- Paso 3
+    ![Prometheus data source](../../out/capturas/ImportDashboard3.png)
+
+Y ya podemos nuestro dashboard.
+
+![Prometheus data source](../../out/capturas/Dashboard.png)
 
 ## Links
 - [Auto Scaling](https://docs.openfaas.com/architecture/autoscaling/)
