@@ -48,11 +48,6 @@ En este ejemplo hemos expuesto la gestión de archivos de minio via un api REST 
 - [Descriptor](/Examples/openfaas/minio-api.yml)
 - [Código](/Examples/openfaas/minio-api)
 
-### OpenFaas webhook con minio 
-TODO descripción
-- [Descriptor](/Examples/openfaas/minio-webhook.yml)
-- [Código](/Examples/openfaas/minio-webhook)
-
 
 ## Link
 - [Minio Client Guide](https://github.com/minio/mc/blob/master/docs/minio-client-complete-guide.md)

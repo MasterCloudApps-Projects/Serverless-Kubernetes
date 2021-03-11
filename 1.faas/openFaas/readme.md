@@ -113,10 +113,10 @@ Ejemplo básico de función http en node:
 - [Descriptor](/Examples/openfaas/hello-world.yml)
 - [Código](/Examples/openfaas/hello-world)
  
-<!-- ### Hello java
+### Hello java
 Ejemplo básico de función http en java:
 - [Descriptor](/Examples/openfaas/hello-java.yml)
-- [Código](/Examples/openfaas/hello-java) -->
+- [Código](/Examples/openfaas/hello-java/src/main/java/com/openfaas/function/Handler.java)
 
 ## Monitoring
 Lan instalación de open faas deja instalado en en namespace openfaas un servicio de prometheus que monitoriza la instalación.
