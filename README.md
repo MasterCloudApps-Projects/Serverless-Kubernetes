@@ -11,12 +11,23 @@ que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 
 ## Servicios 
 
-1. [Bases de datos](#bases-de-datos)
-2. [Gestión de archivos](#gestión-de-archivos)
-3. [Funciones como servicio (Faas)](#funciones-como-servicio-faas)
+1. [Funciones como servicio (Faas)](#funciones-como-servicio-faas)
+2. [Bases de datos](#bases-de-datos)
+3. [Gestión de archivos](#gestión-de-archivos)
 4. [Colas de mensajería y gestión de eventos](#colas-de-mensajería-y-gestión-de-eventos)
 5. [Gestión de usuarios](#gestión-de-usuarios)
 
+
+### Funciones como servicio (Faas)
+| AWS                                         | Azure                                                              | GCP                                                   |
+|---------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------|
+| [Lambda](https://aws.amazon.com/es/lambda/) | [Functions](https://azure.microsoft.com/es-es/services/functions/) | [Cloud Functions](https://cloud.google.com/functions) |
+
+Todo este ecosistema no podría funcionar si no tengo donde ejecutar código, En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
+
+- [ ] [Knative](faas/knative/readme.md)
+- [ ] [Openfaas](faas/openFaas/readme.md)
+<!-- - [ ] [Openwisk](faas/openwisk/readme.md) -->
 
 ### Bases de datos
 | AWS                                             | Azure                                                              | GCP                                               |
@@ -41,15 +52,6 @@ que implementa un api compatible con AWS S3 y que posee un operador de Kubernete
 
 - [X] [Gestión de archivos](GestionArchivos/readme.md)
 
-### Funciones como servicio (Faas)
-| AWS                                         | Azure                                                              | GCP                                                   |
-|---------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------|
-| [Lambda](https://aws.amazon.com/es/lambda/) | [Functions](https://azure.microsoft.com/es-es/services/functions/) | [Cloud Functions](https://cloud.google.com/functions) |
-
-Todo este ecosistema no podria funcionar si no tengo donde ejecutar código, En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
-
-- [ ] [Knative](faas/knative/readme.md)
-- [ ] [Openfaas](faas/openFaas/readme.md)
 
 
 ### Colas de mensajería y gestión de eventos
