@@ -110,7 +110,8 @@ faas template pull https://github.com/oillescas/openfaas_nodejs_templates
 ```
 ### Hello world
 Ejemplo básico de función http en node 
-[Examples/openfaas/hello-world](/Examples/openfaas/hello-world)
+[Descripor](/Examples/openfaas/hello-world.yml)
+[Código](/Examples/openfaas/hello-world)
 
 ### REST api (mongo and -postgresql-)
 En estos dos ejemplos hemos creado 2 ejemplos de conexión a base de datos en uno de ellos un crud contra mongo y en el otro una pequeña api para gestion de dispositivos.
