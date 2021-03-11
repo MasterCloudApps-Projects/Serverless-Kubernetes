@@ -58,6 +58,13 @@ rs0:PRIMARY> db.createUser({
     ]
 })
 ```
+## Ejemplos
+
+### REST api postgresql con openfaas
+En este ejemplo hemos creado un ejemplo de conexión a base de datos, una pequeña api para gestión de dispositivos.
+
+- [Descripor](/Examples/openfaas/crud-postgre.yml)
+- [Código](/Examples/openfaas/crud-postgre)
 
 ## Escalado 
 - [Escalado](https://www.percona.com/doc/kubernetes-operator-for-psmongodb/scaling.html)

@@ -113,17 +113,10 @@ Ejemplo básico de función http en node:
 - [Descripor](/Examples/openfaas/hello-world.yml)
 - [Código](/Examples/openfaas/hello-world)
  
-### Hello java
+<!-- ### Hello java
 Ejemplo básico de función http en java:
 - [Descripor](/Examples/openfaas/hello-java.yml)
-- [Código](/Examples/openfaas/hello-java)
-
-### REST api (mongo and -postgresql-)
-En estos dos ejemplos hemos creado 2 ejemplos de conexión a base de datos en uno de ellos un crud contra mongo y en el otro una pequeña api para gestion de dispositivos.
-- En el ejemplo con mongo es necesario tener desplegado el [operador de mongo](../../Databases/perconaMongodb/readme.md) y una base de datos mongo.
-- Mientras que en el ejemplo de postgresql necesitaremos el [operador de postgresql](../../Databases/zalandoPostgresOperator/readme.md) y una base de datos
-
-
+- [Código](/Examples/openfaas/hello-java) -->
 
 ## Monitoring
 Lan instalación de open faas deja instalado en en namespace openfaas un servicio de prometheus que monitoriza la instalación.

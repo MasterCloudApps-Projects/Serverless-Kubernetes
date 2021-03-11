@@ -58,3 +58,11 @@ postgres=# \l
            |           |          |             |             | postgres=CTc/postgres
 (5 rows)
 ```
+## Ejemplos
+
+### REST api (mongo and -postgresql-)
+En este ejemplo hemos creado un ejemplos de conexión a base de datos, un crud contra mongo.
+
+
+- [Descripor](/Examples/openfaas/crud-mong.yml)
+- [Código](/Examples/openfaas/crud-mong)
