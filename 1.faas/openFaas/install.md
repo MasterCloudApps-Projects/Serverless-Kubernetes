@@ -5,7 +5,7 @@ Guía de instalación paso por paso de [Openfaas](https://www.openfaas.com/).
 
 ## Prerequisitos
 
-[Instalación Básica de MicroK8s](../../Microk8s.md)
+[Instalación Básica de MicroK8s](/Microk8s.md)
 
 
 # Pasos
