@@ -66,9 +66,9 @@ en esta sección vamos a comprobar com podemos ejecutar estas funciones por otro
 Concretamente probaremos los sistemas de colas integradas dentro de Knative y OpenFaas y también
 instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite ejecutar entre otras cosas funciones OpenFaas.
 
-- [ ] [Knative](faas/Knative/events.md)
-- [ ] [Openfaas](faas/openFaas/events.md)
-- [ ] [Argo Events](faas/Events/argo-events/readme.md)
+- [ ] [Knative](/1.faas/Knative/events.md)
+- [ ] [Openfaas](/1.faas/openFaas/events.md)
+- [ ] [Argo Events](/1.faas/Events/argo-events/readme.md)
 
 ### Gestión de usuarios
 | AWS                                           | Azure                                                                                                        | GCP                                       |

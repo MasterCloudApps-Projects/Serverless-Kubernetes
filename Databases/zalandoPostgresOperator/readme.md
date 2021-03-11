@@ -64,5 +64,5 @@ postgres=# \l
 En este ejemplo hemos creado un ejemplos de conexión a base de datos, un crud contra mongo.
 
 
-- [Descripor](/Examples/openfaas/crud-mong.yml)
+- [Descriptor](/Examples/openfaas/crud-mong.yml)
 - [Código](/Examples/openfaas/crud-mong)

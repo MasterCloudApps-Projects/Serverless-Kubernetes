@@ -110,12 +110,12 @@ faas template pull https://github.com/oillescas/openfaas_nodejs_templates
 ```
 ### Hello world
 Ejemplo básico de función http en node:
-- [Descripor](/Examples/openfaas/hello-world.yml)
+- [Descriptor](/Examples/openfaas/hello-world.yml)
 - [Código](/Examples/openfaas/hello-world)
  
 <!-- ### Hello java
 Ejemplo básico de función http en java:
-- [Descripor](/Examples/openfaas/hello-java.yml)
+- [Descriptor](/Examples/openfaas/hello-java.yml)
 - [Código](/Examples/openfaas/hello-java) -->
 
 ## Monitoring
