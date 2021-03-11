@@ -43,5 +43,10 @@ Podemos visitar el sitio en:
 <https://miniostatic.192.168.0.100.nip.io/>
 
 
+### Api minio con openfaas
+En este ejemplo hemos expuesto la gestión de archivos de minio via un api REST hace uso la la template [node12-files](/1.faas/openFaas/readme.md#node12-files) para poder recibir y enviar archivos a Minio.
+- [Descripor](/Examples/openfaas/minio-api.yml)
+- [Código](/Examples/openfaas/minio-api)
+
 ## Link
 - [Minio Client Guide](https://github.com/minio/mc/blob/master/docs/minio-client-complete-guide.md)
