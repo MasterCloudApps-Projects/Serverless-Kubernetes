@@ -6,8 +6,8 @@ En esta sección se detallas las pruebas y ejemplos de como lanzar funciones ope
 
 ### Cron 
 En este ejemplo hacemos uno del [Cron Conector](https://github.com/openfaas/cron-connector) para programar la ejecución desatendida de una función `Download Forecas`
-- [Descriptor](/Examples/openfaas/download-forecas.yml)
-- [Código](/app/functions/download-forecast)
+- [Descriptor](/Examples/openfaas/download-forecast.yml)
+- [Código](/app/functions/donwload-forecast)
 ### minio-webhook
 Aquí podemos ver como recibir un webhook desde minio a una función openfaas cuando se crea( o se sube ) un nuevo archivo a Minio
 (minio-webhook)[./examples/minio-webhook.yml]
