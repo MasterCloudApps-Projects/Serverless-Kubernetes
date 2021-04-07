@@ -4,11 +4,11 @@
 
 En este ejemplo vamos a despleagar ArgoEvents y usar un "event-source" de tipo webhook, para ejecutar una función OpenFaas a través de un sensor
 
-## Prerequisitps
+## Prerequisitos
 
-[Instalación Básica de MicroK8s](/Microk8s.md)
-[OpenFaas instalado](/1.faas/openFaas/install.md)
-[OpenFaas cli instalado y configurado](/1.faas/openFaas/readme.md#cli)
+- [Instalación Básica de MicroK8s](/Microk8s.md)
+- [OpenFaas instalado](/1.faas/openFaas/install.md)
+- [OpenFaas cli instalado y configurado](/1.faas/openFaas/readme.md#cli)
 
 ## Instalar ArgoEvents
 

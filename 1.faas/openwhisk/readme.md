@@ -14,6 +14,7 @@ openfaas                Stopped           --               Ubuntu 18.04 LTS
 ```
 
 Enable helm3 in cluster
+
 ```shell
 multipass shell <vm name>
 microk8s enable helm3

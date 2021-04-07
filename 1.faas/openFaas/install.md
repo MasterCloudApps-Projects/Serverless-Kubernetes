@@ -6,7 +6,7 @@ Guía de instalación paso por paso de [Openfaas](https://www.openfaas.com/).
 
 [Instalación Básica de MicroK8s](/Microk8s.md)
 
-# Pasos
+## Pasos
 
 - Empezamos clonando el repositorio
 
