@@ -1,4 +1,5 @@
 # OpenFaas
+
 ![openfaas](https://blog.alexellis.io/content/images/2017/08/faas_side.png)
 
 En esta sección instalaremos y probaremos OpenFaas y su cli. También veremos algunos ejemplos de funciones y como los integramos con otros de los servicios Serverless
@@ -6,9 +7,11 @@ En esta sección instalaremos y probaremos OpenFaas y su cli. También veremos a
 - [Documentación oficial](https://www.openfaas.com/)
 
 ## Instalación
+
 - [Instalación de OpenFaaS](install.md)
 
 ## Cli
+
 - [Instalación de faas-cli](https://docs.openfaas.com/cli/install/)
 - [Docs](https://blog.alexellis.io/quickstart-openfaas-cli/)
 - [GitHub](https://github.com/openfaas/faas-cli)
@@ -22,12 +25,14 @@ kubectl get secret basic-auth -n openfaas -o 'jsonpath={.data.basic-auth-passwor
 ## Desarrollo
 
 El desarrollo de las funciones en OpenFaas se basan en templates. Para comenzar debemos ejecutar la siguiente instrucción para crear una nueva función:
+
 ```bash
 faas new --lang node12 hello-world
 ```
+
 Donde `--lang node12` es la plantilla que queremos usar y `hello-world` es el nombre de la función que queremos crear.
 
-Esta instrucción nos genera el descriptor de la función [`hello-world.yml`](examples/hello-world.yml) 
+Esta instrucción nos genera el descriptor de la función [`hello-world.yml`](examples/hello-world.yml)
 
 ```yml
 version: 1.0
@@ -43,6 +48,7 @@ functions:
 Y una carpeta con el archivo `handler.js` y el archivo `package.json`, este es el lugar donde desarrollaremos nuestra función.
 
 En el archivo `handler.js` debemos exportar la función que queremos ejecutar
+
 ```javascript
 'use strict'
 
@@ -57,31 +63,41 @@ module.exports = async (event, context) => {
 }
 ```
 
-esta función va a recibir como parámetros, un evento y un contento. 
+esta función va a recibir como parámetros, un evento y un contento.
+
 - En el evento vamos a encontrar los datos de la llamada a la función, el body, las cabeceras, el método, el query path, y el path.
 - Mientras que en el contexto vamos a encontrar los métodos para devolver la respuesta, status, headers, succeed y fail.
 
-Podemos encontrar plantillas para gran cantidad de lenguajes de programación y versiones de los mismos. 
+Podemos encontrar plantillas para gran cantidad de lenguajes de programación y versiones de los mismos.
 
-Una vez desarrollada podemos desplegarla con 
+Una vez desarrollada podemos desplegarla con
+
 ```bash
 faas-cli up -f hello-world.yml
 ```
- - esto nos construirá una imagen docker
-    ```bash
-    faas-cli build -f hello-world.yml
-    ```
- - nos subirá la imagen al registro de docker
-    ```bash
-    faas-cli push -f hello-world.yml
-    ```
+
+- esto nos construirá una imagen docker
+
+  ```bash
+  faas-cli build -f hello-world.yml
+  ```
+
+- nos subirá la imagen al registro de docker
+  
+  ```bash
+  faas-cli push -f hello-world.yml
+  ```
+
 - y desplegará la función en nuestro cluster Kubernetes
-    ```bash
-    faas-cli deploy -f hello-world.yml
-    ```
+  
+  ```bash
+  faas-cli deploy -f hello-world.yml
+  ```
+
 En un solo comando, si queremos lanzar solo uno de esos pasos solo tenemos que lanzar los comandos anteriores.
 
 Podemos consultar los logs de la ejecución de la función con el comando
+
 ```bash
 faas-cli logs hello-world
 ```
@@ -89,13 +105,19 @@ faas-cli logs hello-world
 Ademas podemos crear nuestras propias plantillas para añadir lenguajes o para abstraer partes comunes del desarrollo en varias faas. En este ejemplo hemos desarrollado 2 plantillas basadas en la plantilla original node12.
 
 ### Custom templates
+
 #### node12-files
+
 Esta plantilla ánade el plugin de files al servidor express que posee la plantilla oficial de node12, esto hace que se puedan recibir de una manera sencilla archivos via http.
+
 #### node12-nats
+
 Esta plantilla parsea la cabecera de manera manual para facilitar la lectura de una cola de mensajes Nats.
 
 ## Ejemplos
+
 Todos los ejemplos se pueden desplegar con el comando deploy ya que todas las imágenes están publicadas en DockerHub
+
 ```bash
 faas-cli deploy -f <name_of_faas.yaml>
 ```
@@ -106,19 +128,25 @@ También necesitas descargar los templates OpenFaas con los siguientes comandos.
 
 ```bash
 faas template pull
-faas template pull https://github.com/oillescas/openfaas_nodejs_templates
+faas template pull https://github.com/MasterCloudApps-Projects/Serverless-Kubernetes-openfass
 ```
+
 ### Hello world
+
 Ejemplo básico de función http en node:
+
 - [Descriptor](/Examples/openfaas/hello-world.yml)
 - [Código](/Examples/openfaas/hello-world)
- 
+
 ### Hello java
+
 Ejemplo básico de función http en java:
+
 - [Descriptor](/Examples/openfaas/hello-java.yml)
 - [Código](/Examples/openfaas/hello-java/src/main/java/com/openfaas/function/Handler.java)
 
 ## Monitoring
+
 Lan instalación de open faas deja instalado en en namespace openfaas un servicio de prometheus que monitoriza la instalación.
 Y en microk8s en el Namespace monitoring tenemos un servicio de grafana, con los dashboard del propio k8s, y vamos a configurar un dashboard para openfaas.
 
@@ -140,7 +168,6 @@ Cuando ya tenemos este nuevo datasource importamos el siguiente dashboard de la 
 <https://grafana.com/grafana/dashboards/3434>
 
 - Paso 1
-    
     ![Prometheus data source](../../out/capturas/importDashboard1.png)
 - Paso 2
     ![Prometheus data source](../../out/capturas/ImportDashboard2.png)
@@ -152,6 +179,7 @@ Y ya podemos nuestro dashboard.
 ![Prometheus data source](../../out/capturas/Dashboard.png)
 
 ## Links
+
 - [Auto Scaling](https://docs.openfaas.com/architecture/autoscaling/)
 - [Triggers](https://docs.openfaas.com/reference/triggers/)
 - [Plonk stak](https://www.openfaas.com/blog/plonk-stack/)
