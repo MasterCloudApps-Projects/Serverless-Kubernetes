@@ -41,7 +41,7 @@ kubectl -n argo-events apply -f event-source.yaml
 Desplegar una función OpenFaas de ejemplo
 
 ```bash
-faas-cli deploy -f https://raw.githubusercontent.com/MasterCloudApps-Projects/Serverless-Kubernetes/master/faas/openFaas/examples/hello-world.ym
+faas-cli deploy -f https://raw.githubusercontent.com/MasterCloudApps-Projects/Serverless-Kubernetes/main/faas/openFaas/examples/hello-world.ym
 ```
 
 Desplegar un sensor con un triger http a la función OpenFaas
