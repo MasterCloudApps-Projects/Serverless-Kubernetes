@@ -46,7 +46,6 @@ nginx:
 microk8s helm3 install owdev ./helm/openwhisk -n openwhisk --create-namespace -f mycluster.yaml
 ```
 
-
 - Install and Configure the wsk CLI
 
-TODO
+<!-- TODO -->

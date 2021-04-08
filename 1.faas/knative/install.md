@@ -53,3 +53,11 @@ microk8s.enable istio
   kubectl apply --filename https://github.com/knative/serving/releases/download/v0.16.0/monitoring-core.yaml
   kubectl apply --filename https://github.com/knative/serving/releases/download/v0.16.0/monitoring-metrics-prometheus.yaml
   ```
+
+- Verificamos la instalacion del 'Observability plugin'
+  todos los componentes deben tener el estado `Running` o `Completed`:
+
+  ```shell
+  kubectl get pods --namespace knative-monitoring
+  ```
+  
