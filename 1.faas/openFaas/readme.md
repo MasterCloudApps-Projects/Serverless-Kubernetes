@@ -145,7 +145,7 @@ Ejemplo básico de función http en java:
 - [Descriptor](/Examples/openfaas/hello-java.yml)
 - [Código](/Examples/openfaas/hello-java/src/main/java/com/openfaas/function/Handler.java)
 
-## Monitoring
+## Monitorización
 
 Lan instalación de open faas deja instalado en en namespace openfaas un servicio de prometheus que monitoriza la instalación.
 Y en microk8s en el Namespace monitoring tenemos un servicio de grafana, con los dashboard del propio k8s, y vamos a configurar un dashboard para openfaas.

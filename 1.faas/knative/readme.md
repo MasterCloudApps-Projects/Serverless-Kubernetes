@@ -20,7 +20,7 @@ El desarrollo en Knative es simplemente montar un contenedor Docker con cualquie
 
 ### REST api
 
-En este caso hemos creado una pequeña api resto con NODE simulando la base de datos en memoria.
+En este caso hemos creado una pequeña api REST con NODE simulando la base de datos en memoria.
 
 #### Despliegue
 
@@ -77,7 +77,15 @@ curl -H "Host: knative-rest.default.example.com" http://192.168.64.2:31380/users
 
 La instalación de Knative  
 <!-- TODO añadir monitorizacion  -->
-- prometheus and grafana instaled and configured in knative-monitoring namespace
+- Prometheus y Grafana se han instalado en el namespace knative-monitoring
+
+Primeramente tenemos que acceder a grafana, podremos hacer un proxy al puerto del servicio, pero por comodidad vamos a exponer el servicio con un ingress.
+
+```bash
+kubectl apply -f ingress-grafana.yml
+```
+
+accedes al dominio de ingress <http://grafana.192.168.64.2.nip.io/>
 
 ## Links
 
