@@ -12,10 +12,10 @@ que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 ## Servicios 
 
 1. [Funciones como servicio (Faas)](#funciones-como-servicio-faas)
-2. [Bases de datos](#bases-de-datos)
-3. [Gestión de archivos](#gestión-de-archivos)
-4. [Colas de mensajería y gestión de eventos](#colas-de-mensajería-y-gestión-de-eventos)
-5. [Gestión de usuarios](#gestión-de-usuarios)
+1. [Gestión de archivos](#gestión-de-archivos)
+1. [Bases de datos](#bases-de-datos)
+1. [Colas de mensajería y gestión de eventos](#colas-de-mensajería-y-gestión-de-eventos)
+<>. [Gestión de usuarios](#gestión-de-usuarios)
 
 
 ### Funciones como servicio (Faas)
@@ -25,9 +25,20 @@ que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 
 Todo este ecosistema no podría funcionar si no tengo donde ejecutar código, En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
 
-- [ ] [Knative](faas/knative/readme.md)
-- [ ] [Openfaas](faas/openFaas/readme.md)
+- [ ] [Knative](/1.faas/knative/readme.md)
+- [ ] [Openfaas](/1.faas/openFaas/readme.md)
 <!-- - [ ] [Openwisk](faas/openwisk/readme.md) -->
+
+### Gestión de archivos
+
+| AWS                                 | Azure                                                                     | GCP                                                         |
+|-------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------|
+| [s3](https://aws.amazon.com/es/s3/) | [Blob Storage](https://azure.microsoft.com/es-es/services/storage/blobs/) | [Cloud Storage](https://cloud.google.com/storage?hl=es-419) |
+
+Otro servicio que ofrecen los proveedores de cloud son la gestión y almacenamiento de archivos en este caso vamos a instalar y probar minio,
+que implementa un api compatible con AWS S3 y que posee un operador de Kubernetes que nos permite el autoescalado.
+
+- [X] [Gestión de archivos](/2.GestionArchivos/readme.md)
 
 ### Bases de datos
 | AWS                                             | Azure                                                              | GCP                                               |
@@ -39,20 +50,6 @@ en este trabajo vamos a instalar y probar 2 de ellos, el operador de MongoDB de 
 
 - [X] [Mongodb operator](Databases/perconaMongodb/readme.md)
 - [X] [Postgresql operator](Databases/zalandoPostgresOperator/readme.md)
-
-
-
-### Gestión de archivos
-| AWS                                 | Azure                                                                     | GCP                                                         |
-|-------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------|
-| [s3](https://aws.amazon.com/es/s3/) | [Blob Storage](https://azure.microsoft.com/es-es/services/storage/blobs/) | [Cloud Storage](https://cloud.google.com/storage?hl=es-419) |
-
-Otro servicio que ofrecen los proveedores de cloud son la gestión y almacenamiento de archivos en este caso vamos a instalar y probar minio,
-que implementa un api compatible con AWS S3 y que posee un operador de Kubernetes que nos permite el autoescalado.
-
-- [X] [Gestión de archivos](GestionArchivos/readme.md)
-
-
 
 ### Colas de mensajería y gestión de eventos
 | AWS                                                    | Azure                                                                       | GCP                                                   |

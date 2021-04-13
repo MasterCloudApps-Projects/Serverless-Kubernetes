@@ -53,6 +53,7 @@ Podemos visitar el sitio en:
 
 ### Api minio con openfaas
 
+<!-- TODO explicar como instalar -->
 En este ejemplo hemos expuesto la gestión de archivos de minio via un api REST hace uso la la template [node12-files](/1.faas/openFaas/readme.md#node12-files) para poder recibir y enviar archivos a Minio.
 
 - [Descriptor](/Examples/openfaas/minio-api.yml)
