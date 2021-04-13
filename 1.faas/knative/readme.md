@@ -75,9 +75,7 @@ curl -H "Host: knative-rest.default.example.com" http://192.168.64.2:31380/users
 
 ## Monitorización
 
-La instalación de Knative  
-<!-- TODO añadir monitorizacion  -->
-- Prometheus y Grafana se han instalado en el namespace knative-monitoring
+Prometheus y Grafana se han instalado en el namespace knative-monitoring
 
 Primeramente tenemos que acceder a grafana, podremos hacer un proxy al puerto del servicio, pero por comodidad vamos a exponer el servicio con un ingress.
 
@@ -87,6 +85,7 @@ kubectl apply -f ingress-grafana.yml
 
 accedes al dominio de ingress <http://grafana.192.168.64.2.nip.io/>
 
+<!-- TODO añadir monitorizacion  -->
 ## Links
 
 - [Auto Scaling](https://knative.dev/docs/serving/autoscaling/)
