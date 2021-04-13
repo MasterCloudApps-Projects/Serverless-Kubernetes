@@ -161,6 +161,8 @@ accedes al dominio de ingress <http://grafana.192.168.0.100.nip.io/> con usuario
 
 Una vez logado añadimos el prometeus del namespace openfaas como data source.
 
+- URL <http://prometheus.openfaas.svc:9090>
+
 ![Prometheus data source](../../out/capturas/datasource.png)
 
 Cuando ya tenemos este nuevo datasource importamos el siguiente dashboard de la web de grafana
