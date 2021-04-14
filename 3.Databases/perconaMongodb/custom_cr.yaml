@@ -32,7 +32,7 @@ spec:
       enabled: false
       size: 1
       affinity:
-       antiAffinityTopologyKey: "kubernetes.io/hostname"
+        antiAffinityTopologyKey: "kubernetes.io/hostname"
     resources:
       limits:
         cpu: "300m"
