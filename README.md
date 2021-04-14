@@ -26,7 +26,7 @@ Todo este ecosistema no podría funcionar si no tengo donde ejecutar código, En
 
 - [ ] [Knative](/1.faas/knative/readme.md)
 - [ ] [Openfaas](/1.faas/openFaas/readme.md)
-<!-- - [ ] [Openwisk](faas/openwisk/readme.md) -->
+<!-- - [ ] [Openwisk](/1.faas/openwisk/readme.md) -->
 
 ### Gestión de archivos
 
@@ -37,7 +37,7 @@ Todo este ecosistema no podría funcionar si no tengo donde ejecutar código, En
 Otro servicio que ofrecen los proveedores de cloud son la gestión y almacenamiento de archivos en este caso vamos a instalar y probar minio,
 que implementa un api compatible con AWS S3 y que posee un operador de Kubernetes que nos permite el autoescalado.
 
-- [X] [Gestión de archivos](/2.GestionArchivos/readme.md)
+- [ ] [Minio](/2.GestionArchivos/minio/readme.md)
 
 ### Bases de datos
 
@@ -48,8 +48,8 @@ que implementa un api compatible con AWS S3 y que posee un operador de Kubernete
 Las alternativas a las bases de datos administradas por los proveedores de cloud serian los Operadores Kubernetes de bases de datos,
 en este trabajo vamos a instalar y probar 2 de ellos, el operador de MongoDB de Percona y el operador de PostgreSQL de Zalando.
 
-- [X] [Mongodb operator](Databases/perconaMongodb/readme.md)
-- [X] [Postgresql operator](Databases/zalandoPostgresOperator/readme.md)
+- [ ] [Mongodb operator](/3.Databases/perconaMongodb/readme.md)
+- [ ] [Postgresql operator](/3.Databases/zalandoPostgresOperator/readme.md)
 
 ### Colas de mensajería y gestión de eventos
 
@@ -64,9 +64,9 @@ en esta sección vamos a comprobar com podemos ejecutar estas funciones por otro
 Concretamente probaremos los sistemas de colas integradas dentro de Knative y OpenFaas y también
 instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite ejecutar entre otras cosas funciones OpenFaas.
 
-- [ ] [Knative](/1.faas/Knative/events.md)
-- [ ] [Openfaas](/1.faas/openFaas/events.md)
-- [ ] [Argo Events](/1.faas/Events/argo-events/readme.md)
+- [ ] [Knative](/4.ColasEventos/Knative/events.md)
+- [ ] [Openfaas](/4.ColasEventos/openFaas/events.md)
+- [ ] [Argo Events](/4.ColasEventos/ArgoEvents/readme.md)
 
 ### Gestión de usuarios
 
@@ -77,13 +77,13 @@ instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite
 En esta sección vamos a instalar Keycloak para la gestión de usuarios dentro del ecosistema kubernetes, como alternativa a los sistemas de identidad y acceso de los proveedores de cloud,
 además vamos a implementar varios ejemplos de cómo integrarlos en las funciones OpenFaas que hemos desarrollado anteriormente.
 
-- [ ] [Keycloak](Keycloack/readme.md)
+- [ ] [Keycloak](/5.Usuarios/Keycloack/readme.md)
 
 ## Aplicación de Ejemplo
 
 Para terminar hemos desarrollado una pequeña aplicación de ejemplo donde ponemos en común alguno de los servicios que hemos probado anteriormente.
 
-- [ ] [App](app/readme.md)
+- [ ] [App](/6.app/readme.md)
 
 ## Next steps
 
