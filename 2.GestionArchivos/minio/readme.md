@@ -6,7 +6,7 @@ Al no usar servidores es necesario un servicio que se encargue de gestionar los 
 
 ## Minio
 
-- [Instalacion de Minio](install-minio.md)
+- [Instalacion de Minio](install.md)
 
 ## Ejemplos
 
@@ -19,7 +19,7 @@ Dentro de los posibles usos que se dan normalmente al almacenamiento de ficheros
 1. Instalar minio client(mc) para el sistema operativo que necesites.
      - [Minio Client](https://github.com/minio/mc)
 
-1. [Recuperamos las claves de acceso](install-minio.md#recuperando-las-keys-de-acceso)
+1. [Recuperamos las claves de acceso](install.md#recuperando-las-keys-de-acceso)
 
 1. Configurar mc para atacar a nuestro minio
 

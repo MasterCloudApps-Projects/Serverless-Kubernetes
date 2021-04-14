@@ -2,7 +2,7 @@
 
 ## Prerequisitos
 
-[Instalación básica de MicroK8s](../../Microk8s.md)
+[Instalación básica de MicroK8s](/Microk8s.md)
 
 - Instalar helm3 en microk8s
 
