@@ -1,32 +1,35 @@
-# Events
+# Eventos en Knative
 
-## Event Broker Example
+## Ejemplo de Event Broker
 
-<!-- TODO 
- En este ejemplo hemos echo uso del event broker en memoria de knative lanzar un evento al broker y comprobar como se ejecutan una de las 2 funciones que hemos desplegado. 
--->
+ En este ejemplo hemos echo uso del event broker en memoria de knative lanzar un evento al broker y comprobar como se ejecutan una de las 2 funciones que hemos desplegado.
 
-## HOWTO
-### deploy broker
-```
+## Pasos
+
+### Despliegue del "broker"
+
+```bash
 kubectl apply -f broker.yaml
 ```
 
-we validate that the broker is created
-```
+validamos que el broker ha sido creado
+
+```bash
 kubectl --namespace event-example get Broker default
 NAME      READY   REASON   URL                                                                              AGE
 default   True             http://broker-ingress.knative-eventing.svc.cluster.local/event-example/default   4h34m
 ```
 
-### Deploy event consumers
-```
+### Despliegue del "event consumers"
+
+```bash
 kubectl -n event-example apply hello-consumer.yaml
 kubectl -n event-example apply goodby-consumer.yaml
 ```
 
-validate
-```sh
+validamos que el confumidor se ha creado correctamente.
+
+```bash
 kubectl --namespace event-example get deployments hello-display goodbye-display
 
 NAME              READY   UP-TO-DATE   AVAILABLE   AGE
@@ -34,13 +37,13 @@ hello-display     1/1     1            1           4h30m
 goodbye-display   1/1     1            1           4h26m
 ```
 
+Para realizar la prueba nos vamos a conectar al el pod con el siguiente comando:
 
-SSH into the pod by running the following command:
 ```bash
 kubectl -n event-example attach curl -it
 ```
 
-launch the events. 
+Lanzamos las llamadas con curl desde el pod
 
 ```sh
 curl -v "http://broker-ingress.knative-eventing.svc.cluster.local/event-example/default" \
@@ -74,8 +77,7 @@ curl -v "http://broker-ingress.knative-eventing.svc.cluster.local/event-example/
   -d '{"msg":"Hello Knative!"}'
 ```
 
-
-## Verifying that events were received
+## Verificamos que se han recivido y tratado los eventos
 
 ```bash
 kubectl -n event-example logs -l app=hello-display --tail=100
