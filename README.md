@@ -48,8 +48,8 @@ que implementa un api compatible con AWS S3 y que posee un operador de Kubernete
 Las alternativas a las bases de datos administradas por los proveedores de cloud serian los Operadores Kubernetes de bases de datos,
 en este trabajo vamos a instalar y probar 2 de ellos, el operador de MongoDB de Percona y el operador de PostgreSQL de Zalando.
 
-- [ ] [Mongodb operator](/3.Databases/perconaMongodb/readme.md)
-- [ ] [Postgresql operator](/3.Databases/zalandoPostgresOperator/readme.md)
+- [ ] [Mongodb operator](/3.BasesDeDatos/perconaMongodb/readme.md)
+- [ ] [Postgresql operator](/3.BasesDeDatos/zalandoPostgresOperator/readme.md)
 
 ### Colas de mensajería y gestión de eventos
 
