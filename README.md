@@ -25,7 +25,7 @@ que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 Todo este ecosistema no podría funcionar si no tengo donde ejecutar código, En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
 
 - [ ] [Knative](/1.faas/knative/readme.md)
-- [ ] [Openfaas](/1.faas/openFaas/readme.md)
+- [ ] [OpenFaaS](/1.faas/OpenFaaS/readme.md)
 <!-- - [ ] [Openwisk](/1.faas/openwisk/readme.md) -->
 
 ### Gestión de archivos
@@ -65,7 +65,7 @@ Concretamente probaremos los sistemas de colas integradas dentro de Knative y Op
 instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite ejecutar entre otras cosas funciones OpenFaas.
 
 - [ ] [Knative](/4.ColasEventos/Knative/events.md)
-- [ ] [Openfaas](/4.ColasEventos/openFaas/events.md)
+- [ ] [OpenFaaS](/4.ColasEventos/OpenFaaS/events.md)
 - [ ] [Argo Events](/4.ColasEventos/ArgoEvents/readme.md)
 
 ### Gestión de usuarios
@@ -98,4 +98,4 @@ Para terminar hemos desarrollado una pequeña aplicación de ejemplo donde ponem
   - [openfaas cloud](https://github.com/openfaas/openfaas-cloud)
   - [ci/cd for knative with concourse](https://medium.com/aptomi/ci-cd-for-knative-serverless-apps-on-kubernetes-with-concourse-54bafef51767)
 - Othes tools
-  - [Openfaas Ingress Operator](https://github.com/openfaas/ingress-operator)
+  - [OpenFaaS Ingress Operator](https://github.com/openfaas/ingress-operator)

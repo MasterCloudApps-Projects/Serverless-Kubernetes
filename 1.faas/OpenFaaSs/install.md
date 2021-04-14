@@ -1,6 +1,6 @@
 # Instalación
 
-Guía de instalación paso por paso de [Openfaas](https://www.openfaas.com/).
+Guía de instalación paso por paso de [OpenFaaS](https://www.openfaas.com/).
 
 ## Prerequisitos
 
@@ -39,7 +39,7 @@ kubectl apply -f ./yaml
 ```
 
 - y finalmente comprobamos la instalación
-    Openfaas despliega un servicio llamado gateway-external que expone un node port y por tanto podemos acceder a el desde la ip de nuesta maquina virtual.
+    OpenFaaS despliega un servicio llamado gateway-external que expone un node port y por tanto podemos acceder a el desde la ip de nuesta maquina virtual.
 
     ```bash
     kubectl -n openfaas get service/gateway-external

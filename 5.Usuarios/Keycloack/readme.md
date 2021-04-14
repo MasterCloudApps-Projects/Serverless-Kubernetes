@@ -10,4 +10,4 @@
 
 
 ## Secure openfaas function
-- [Openfaas](OpenFaas/readme.md)
+- [OpenFaaS](OpenFaaS/readme.md)
