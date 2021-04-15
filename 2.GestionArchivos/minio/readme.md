@@ -1,10 +1,13 @@
-# Gestión de archivos
+# Minio
+
+![Minio](https://min.io/resources/img/logo/MINIO_wordmark.png)
+
 
 Al no usar servidores es necesario un servicio que se encargue de gestionar los archivos necesarios para una aplicación serverless. Como alternativa a este servicio vamos a instalar y probar Minio.
 
 - [Documentación Oficial](https://min.io/)
 
-## Minio
+## Instalación
 
 - [Instalacion de Minio](install.md)
 
@@ -14,7 +17,7 @@ Dentro de los posibles usos que se dan normalmente al almacenamiento de ficheros
 
 ### Despliegue de un sitio estático
 
-![Static website](../out/GestionArchivos/simple-app/simple-app.png)
+![Static website](/out/GestionArchivos/simple-app/simple-app.png)
 
 1. Instalar minio client(mc) para el sistema operativo que necesites.
      - [Minio Client](https://github.com/minio/mc)
