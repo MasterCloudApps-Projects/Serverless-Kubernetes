@@ -1,6 +1,6 @@
 # Secure openFaas function
 
-![Load Web](../../out/Keycloack/OpenFaas/secure-openfaas/secure-openfaas.png)
+![Load Web](/out/Keycloack/OpenFaas/secure-openfaas/secure-openfaas.png)
 
 ## Examples
 
@@ -8,8 +8,6 @@
 <!-- TODO 
 En este ejemplo desplegamos una funcion y la exponemos al exterior con un ingress securizandolo con oaut-proxy
 -->
-
-
 
 ## Links
 

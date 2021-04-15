@@ -1,42 +1,43 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: simpleapp-ingress
   annotations:
-    kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: "/static-site/$1"
     nginx.ingress.kubernetes.io/configuration-snippet: |
       rewrite ^/?$ /static-site/index.html break;
     nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
     nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
 spec:
-  tls:
-  - hosts:
-    - miniostatic.192.168.64.9.nip.io
+  # ingressClassName: nginx
   rules:
-  - host: miniostatic.192.168.64.9.nip.io
+  - host: miniostatic.192.168.64.4.nip.io
     http:
       paths:
       - path: /(.*)
+        pathType: Prefix
         backend:
-          serviceName: my-minio
-          servicePort: 9000
+          service:
+            name: my-minio
+            port: 
+              number: 9000
 
 ---
 
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: oauth2-proxy
 spec:
-  tls:
-    - hosts:
-      - miniostatic.192.168.64.9.nip.io
+  # ingressClassName: nginx
   rules:
-  - host: miniostatic.192.168.64.9.nip.io
+  - host: miniostatic.192.168.64.4.nip.io
     http:
       paths:
-      - backend:
-          serviceName: oauth2-proxy
-          servicePort: 4180
-        path: /oauth2
+      - path: /oauth2
+        pathType: Prefix
+        backend:
+          service:
+            name: oauth2-proxy
+            port: 
+              number: 4180

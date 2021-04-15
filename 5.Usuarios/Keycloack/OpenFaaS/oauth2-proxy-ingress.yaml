@@ -21,7 +21,7 @@ spec:
         # - --keycloak-group=users
         - --email-domain=*
         - --client-id=openfaas
-        - --client-secret=9ebc7602-e6bd-47f8-b376-4876d24807ac
+        - --client-secret=1ab1ccbc-76a1-463c-a100-3265f52a84d4
         - --login-url=https://keycloak.192.168.0.100.nip.io/auth/realms/tfm/protocol/openid-connect/auth
         - --redeem-url=https://keycloak.192.168.0.100.nip.io/auth/realms/tfm/protocol/openid-connect/token
         - --validate-url=https://keycloak.192.168.0.100.nip.io/auth/realms/tfm/protocol/openid-connect/userinfo
@@ -38,9 +38,9 @@ spec:
         - --upstream=http://gateway.openfaas.svc.cluster.local:8080/
         env:
         - name: OAUTH2_PROXY_CLIENT_ID
-          value: kuberingress
+          value: openfaas
         - name: OAUTH2_PROXY_CLIENT_SECRET
-          value: 9ebc7602-e6bd-47f8-b376-4876d24807ac
+          value: 1ab1ccbc-76a1-463c-a100-3265f52a84d4
         - name: OAUTH2_PROXY_COOKIE_SECRET
           value: MEZXM1RPYU5jYU5JWlVjUi9kbkdHZz09
         image: quay.io/oauth2-proxy/oauth2-proxy:latest
@@ -69,13 +69,12 @@ spec:
     k8s-app: oauth2-proxy
 
 --- 
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: openfaas-ingress
   namespace: openfaas
   annotations:
-    kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: "/$1"
 spec:
   tls:
@@ -86,7 +85,10 @@ spec:
     http:
       paths:
       - path: /(.*)
+        pathType: Prefix
         backend:
-          serviceName: oauth2-proxy
-          servicePort: 4180
+          service:
+            name: oauth2-proxy
+            port: 
+              number: 4180
 
