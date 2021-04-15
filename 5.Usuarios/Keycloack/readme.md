@@ -8,7 +8,7 @@
 
 ## Importar realm
 
-Para facilitar la prueba hemos
+Para facilitar la prueba hemos configurado y exportado un "realm" y vamos a proceder a importalo
 
 1. Login to the admin console
     Go to the Keycloak Admin Console and login with the username and password you created earlier.
@@ -18,10 +18,19 @@ Para facilitar la prueba hemos
 
     ![Import realm](./import.png)
 
-1. Regeneramos los 
-1. 
-1. 
+1. Regeneramos el secretskey
+1. Actualizamos los despliegues con el nuevo secretkey
+1. Creamos un usuario
 
+## Ejemplos
+
+### Secure Static website
+
+- [Nginx ingress](simple-ingress/readme.md)
+
+### Secure openfaas function
+
+- [OpenFaaS](OpenFaaS/readme.md)
 
 ## Links
 

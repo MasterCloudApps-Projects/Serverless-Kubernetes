@@ -19,7 +19,7 @@ spec:
         - --provider=keycloak
         - --email-domain=*
         - --client-id=openfaas
-        - --client-secret=1ab1ccbc-76a1-463c-a100-3265f52a84d4
+        - --client-secret=a92d17a9-7302-4c23-bc53-86b187ed928d
         - --login-url=https://keycloak.192.168.64.4.nip.io/auth/realms/tfm/protocol/openid-connect/auth
         - --redeem-url=https://keycloak.192.168.64.4.nip.io/auth/realms/tfm/protocol/openid-connect/token
         - --validate-url=https://keycloak.192.168.64.4.nip.io/auth/realms/tfm/protocol/openid-connect/userinfo
@@ -35,7 +35,7 @@ spec:
         - name: OAUTH2_PROXY_CLIENT_ID
           value: openfaas
         - name: OAUTH2_PROXY_CLIENT_SECRET
-          value: 1ab1ccbc-76a1-463c-a100-3265f52a84d4
+          value: a92d17a9-7302-4c23-bc53-86b187ed928d
         - name: OAUTH2_PROXY_COOKIE_SECRET
           value: MEZXM1RPYU5jYU5JWlVjUi9kbkdHZz09
         image: quay.io/oauth2-proxy/oauth2-proxy:latest
