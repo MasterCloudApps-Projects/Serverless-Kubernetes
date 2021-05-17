@@ -1,8 +1,8 @@
 # Instalar microk8s
 
 Para que las pruebas sean lo mas homogeneas para todos los sistemas operativos
-las instrucciones de instalacion del cluster microk8s se especifica la creación de una maquina virtual 
-con multipass, aunque no es necesario en linux. 
+las instrucciones de instalacion del cluster microk8s se especifica la creación de una maquina virtual
+con multipass, aunque no es necesario en linux.
 
 En las ultimas versiones de microk8s no es necesario utilizar multipass ya que en entornos distintos a linux
 la maquina virtual es transparente, en estas pruebas hemos preferido crear las maquinas virtuales a mano

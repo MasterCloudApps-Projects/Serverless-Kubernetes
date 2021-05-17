@@ -22,6 +22,11 @@ Para la configuración de faas-cli usaremos el servicio gateway-external que vim
 kubectl get secret basic-auth -n openfaas -o 'jsonpath={.data.basic-auth-password}'| base64 -d
 ```
 
+```bash
+export OPENFAAS_URL=http://192.168.0.100:31112
+faas login --password <password>
+```
+
 ## Desarrollo
 
 El desarrollo de las funciones en OpenFaas se basan en templates. Para comenzar debemos ejecutar la siguiente instrucción para crear una nueva función:

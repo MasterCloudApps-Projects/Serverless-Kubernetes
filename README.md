@@ -22,7 +22,7 @@ que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 |---------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------|
 | [Lambda](https://aws.amazon.com/es/lambda/) | [Functions](https://azure.microsoft.com/es-es/services/functions/) | [Cloud Functions](https://cloud.google.com/functions) |
 
-Todo este ecosistema no podría funcionar si no tengo donde ejecutar código, En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
+ En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
 
 - [ ] [Knative](/1.faas/knative/readme.md)
 - [ ] [OpenFaaS](/1.faas/OpenFaaS/readme.md)

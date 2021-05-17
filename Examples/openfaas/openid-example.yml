@@ -3,7 +3,7 @@ provider:
   name: openfaas
 functions:
   openid-example:
-    lang: node12-openid
+    lang: node12
     handler: ./openid-example
     image: oillescas/openid-example:latest
 
