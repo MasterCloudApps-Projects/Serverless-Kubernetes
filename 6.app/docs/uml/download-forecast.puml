@@ -1,0 +1,47 @@
+@startuml download-forecast
+
+footer Kubernetes Plant-UML
+' scale max 1024 width
+
+skinparam nodesep 30
+skinparam ranksep 30
+
+' Azure
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+!includeurl KubernetesPuml/OSS/KubernetesSvc.puml
+!includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
+
+
+left to right direction
+
+' Kubernetes Components
+Cluster_Boundary(cluster, "Kubernetes Cluster") {
+    Namespace_Boundary(default, "default") {
+        KubernetesSvc(minio, "Minio", "")
+    }
+
+    Namespace_Boundary(nsfn, "openfaas-fn") {
+        KubernetesSvc(fndf, "[function]\ndownload-forecast", "")
+    }
+
+    Namespace_Boundary(ns, "openfaas") {
+        KubernetesSvc(ofg, "openfaas Gateway", "")
+        KubernetesDeploy(ofcc,"cron-connector","")
+    }
+}
+
+'Import forecast
+Rel(ofcc, ofg, "Launch import\nCRON JOB", "1")
+Rel(ofg, fndf, "Download forecast", "2")
+Rel(fndf, minio, "Save forecast files", "3")
+
+@enduml

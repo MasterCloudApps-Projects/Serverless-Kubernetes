@@ -1,0 +1,45 @@
+version: 1.0
+provider:
+  name: openfaas
+functions:
+  parse-forecastnats:
+    lang: node12-nats
+    handler: ./parse-forecastnats
+    image: oillescas/parse-forecastnats:latest
+    environment:
+      endpoint: my-minio.default.svc.cluster.local
+      minio-port: 9000
+      use-ssl: false
+      db_name: forecast
+      db_host: forecast-database-rs0.default.svc.cluster.local
+    secrets: 
+    - openfaas-minio
+    - openfaas-mongo
+    annotations:
+      topic: "minio"
+  download-forecast:
+    lang: node12
+    handler: ./download-forecast
+    image: oillescas/download-forecast:latest
+    annotations:
+      topic: cron-function
+      schedule: "1 */4 * * *"
+    environment:
+      endpoint: my-minio.default.svc.cluster.local
+      minio-port: 9000
+      use-ssl: false
+      BUCKET_NAME: forecast
+    secrets: 
+    - openfaas-minio
+  get-forecast:
+    lang: node12
+    handler: ./get-forecast
+    image: oillescas/get-forecast:latest
+    environment:
+      use-ssl: false
+      db_name: forecast
+      db_host: forecast-database-rs0.default.svc.cluster.local
+    secrets: 
+    - openfaas-mongo
+
+
