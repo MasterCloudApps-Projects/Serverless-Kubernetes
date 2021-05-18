@@ -12,7 +12,9 @@ Esta función descarga via http la prevision metorologica desde la web de Aemet 
 Se lanza automaticamente según la configuración del cron-connector
 
 ![Docs](../out/app/docs/uml/download-forecast/download-forecast.png)
-[plant-uml](docs/uml/download-forecast.puml)
+
+- [plant-uml](docs/uml/download-forecast.puml)
+- [Código](functions/download-forecast/)
 
 ### parse-forecas
 
@@ -44,7 +46,7 @@ Sirve la pagina web statica que hace uso de las funciones openfaas descritas ant
 - [Instalación Básica de MicroK8s](/Microk8s.md)
 - [Instalación de OpenFaas](/1.faas/openFaas/install.md)
 - [Instalación de minio y minio client](/2.GestionArchivos/minio/install.md)
-- [Instalación del operador de mongo](/3.BasesDeDatos/zalandoPostgresOperator/install.md) NOOOO el de mongo
+- [Instalación del operador de mongo](/3.BasesDeDatos/perconaMongodb/install.md)
 
 ### Pasos para instalar la aplicación
 
