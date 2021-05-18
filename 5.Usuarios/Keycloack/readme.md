@@ -24,6 +24,8 @@ Para facilitar la prueba hemos configurado y exportado un "realm" y vamos a proc
 
 ## Ejemplos
 
+> Nota para que los ejemplos funcionen correctamente hay que actualizar la configuración de los proxys con el nuevo secretkey que hemos regenerado en los pasos anteriores.
+
 ### Secure Static website
 
 ![Secure ingress ](/out/Keycloack/simple-ingress/simple-ingress/simple-ingress.png)
