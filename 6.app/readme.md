@@ -41,7 +41,9 @@ Esta funcion devuelve los datos de la predicción meteorologica para una localid
 Sirve la pagina web statica que hace uso de las funciones openfaas descritas anteriormente.
 
 ![Docs](../out/app/docs/uml/static-site/static-site.png)
-[plant-uml](docs/uml/static-site.puml)
+
+- [plant-uml](docs/uml/static-site.puml)
+- [Código](faas-forecast)
 
 ## Como Instalar la aplicación
 
