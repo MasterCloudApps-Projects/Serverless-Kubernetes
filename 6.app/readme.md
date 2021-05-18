@@ -5,7 +5,7 @@
 
 ## Funciones
 
-### donwload-forecast
+### download-forecast
 
 Esta función descarga via http la prevision metorologica desde la web de Aemet y la guarda en un bucket de minio.
 
@@ -14,7 +14,7 @@ Se lanza automaticamente según la configuración del cron-connector
 ![Docs](../out/app/docs/uml/download-forecast/download-forecast.png)
 
 - [plant-uml](docs/uml/download-forecast.puml)
-- [Código](functions/download-forecast/)
+- [Código](functions/download-forecast)
 
 ### parse-forecas
 

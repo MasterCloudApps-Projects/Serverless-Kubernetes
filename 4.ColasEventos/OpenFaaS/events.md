@@ -9,7 +9,7 @@ En esta sección se detallas las pruebas y ejemplos de como lanzar funciones ope
 En este ejemplo hacemos uno del [Cron Conector](https://github.com/openfaas/cron-connector) para programar la ejecución desatendida de una función `Download Forecas`
 
 - [Descriptor](/Examples/openfaas/download-forecast.yml)
-- [Código](/6.app/functions/donwload-forecast)
+- [Código](/6.app/functions/download-forecast)
 
 ### minio-webhook
 

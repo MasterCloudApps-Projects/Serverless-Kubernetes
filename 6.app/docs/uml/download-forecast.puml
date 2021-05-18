@@ -30,7 +30,7 @@ Cluster_Boundary(cluster, "Kubernetes Cluster") {
     }
 
     Namespace_Boundary(nsfn, "openfaas-fn") {
-        KubernetesSvc(fndf, "[function]\ndonwload-forecast", "")
+        KubernetesSvc(fndf, "[function]\ndownload-forecast", "")
     }
 
     Namespace_Boundary(ns, "openfaas") {

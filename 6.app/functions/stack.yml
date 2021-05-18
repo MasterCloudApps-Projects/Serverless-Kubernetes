@@ -17,10 +17,10 @@ functions:
     - openfaas-mongo
     annotations:
       topic: "minio"
-  donwload-forecast:
+  download-forecast:
     lang: node12
-    handler: ./donwload-forecast
-    image: oillescas/donwload-forecast:latest
+    handler: ./download-forecast
+    image: oillescas/download-forecast:latest
     annotations:
       topic: cron-function
       schedule: "1 */4 * * *"
