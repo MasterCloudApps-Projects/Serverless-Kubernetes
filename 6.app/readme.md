@@ -23,14 +23,18 @@ Esta función revice un evento de minio via una cola nats cada ver que un nuevo 
 Cuando la función recibe el evento descarga el archivo desde minio, transforma la informacion y la guarda la la base de datos mongodb.
 
 ![Docs](../out/app/docs/uml/parse-forecast/parse-forecast.png)
-[plant-uml](docs/uml/parse-forecast.puml)
+
+- [plant-uml](docs/uml/parse-forecast.puml)
+- [Código](functions/parse-forecastnats)
 
 ### get-forecast
 
 Esta funcion devuelve los datos de la predicción meteorologica para una localidad via http.
 
 ![Docs](../out/app/docs/uml/get-forecast/get-forecast.png)
-[plant-uml](docs/uml/get-forecast.puml)
+
+- [plant-uml](docs/uml/get-forecast.puml)
+- [Código](functions/get-forecast)
 
 ## Sitio web estatico
 
@@ -51,12 +55,19 @@ Sirve la pagina web statica que hace uso de las funciones openfaas descritas ant
 ### Pasos para instalar la aplicación
 
 - Creación y configuración de un bucket en minio.
-  - [Instrucciones](docs/config-minio.md)
+  - [Instrucciones](config-minio.md)
 - Configuración del cluster mongodb
-  - [Instrucciones](docs/config-mongo.md)
+  - [Instrucciones](config-mongo.md)
 - Despliegue de las funciones openfaas
   
   ```bash
   cd functions
   faas deploy -f stack.yml 
+  ```
+
+- Despliegue de los componentes kubernetes
+
+  ```sh
+  kubectl apply -f kube/connector-dep.yaml
+  kubectl apply -f kube/ingress.yaml
   ```
