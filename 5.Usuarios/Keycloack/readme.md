@@ -26,7 +26,21 @@ Para facilitar la prueba hemos configurado y exportado un "realm" y vamos a proc
 
 ### Secure Static website
 
-- [Nginx ingress](simple-ingress/readme.md)
+![Secure ingress ](/out/Keycloack/simple-ingress/simple-ingress/simple-ingress.png)
+
+En este ejemplo partimos del despliegue de un [sitio web estatico con minio](/2.GestionArchivos/minio/readme.md#despliegue-de-un-sitio-estático)
+
+Para segurizarlo desplegamos un [oauth-proxy](/5.Usuarios/Keycloack/simple-ingress/oauth-proxy.yaml) que configuramos para que ataque a la configuración de keycloak que hemos importado ateriormente.
+
+Y configuramos el nginx ingress para que use ese proxy para segurizar las llamadas. Y servir rutas de Keycloack como la del formulario de login entre otras.
+
+```sh
+kubectl apply -f simple-ingress/oauth-proxy.yaml
+kubectl apply -f simple-ingress/ingress.yaml
+```
+
+A partir de este punto ya podriamos acceder al sitio web
+<http://miniostatic.192.168.64.4.nip.io> y logarnos con los usuarios creados.
 
 ### Secure openfaas function
 
@@ -36,3 +50,4 @@ Para facilitar la prueba hemos configurado y exportado un "realm" y vamos a proc
 
 - [Keycloak in kubernetes](https://www.keycloak.org/getting-started/getting-started-kube)
 - [Keycloak Kubernetes Operator](https://www.keycloak.org/getting-started/getting-started-operator-kubernetes)
+- [Ingress nginx oauth external auth](https://kubernetes.github.io/ingress-nginx/examples/auth/oauth-external-auth/)
