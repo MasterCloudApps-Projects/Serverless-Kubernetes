@@ -44,10 +44,19 @@ A partir de este punto ya podriamos acceder al sitio web
 
 ### Secure openfaas function
 
-- [OpenFaaS](OpenFaaS/readme.md)
+![Load Web](/out/Keycloack/OpenFaas/secure-openfaas/secure-openfaas.png)
+
+En este ejemplo vamos a segurizar el gateway de openfaas con lo que así segurizariamos cualquier función openfaas.
+
+```sh
+kubectl apply -f oauth2-proxy-ingress.yaml
+```
+
+En este momento al llamar via <http://openfaas.192.168.64.4.nip.io> a cualquier función que tengamos desplegada en openfaas nos pediria login para llegar a ella.
 
 ## Links
 
 - [Keycloak in kubernetes](https://www.keycloak.org/getting-started/getting-started-kube)
 - [Keycloak Kubernetes Operator](https://www.keycloak.org/getting-started/getting-started-operator-kubernetes)
 - [Ingress nginx oauth external auth](https://kubernetes.github.io/ingress-nginx/examples/auth/oauth-external-auth/)
+- [Adding authentication to your Kubernetes Web applications with Keycloak](https://www.openshift.com/blog/adding-authentication-to-your-kubernetes-web-applications-with-keycloak)
