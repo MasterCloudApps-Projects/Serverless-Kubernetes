@@ -31,7 +31,7 @@ Cluster_Boundary(cluster, "Kubernetes Cluster") {
     
     Namespace_Boundary(default, "default") {
         KubernetesIng(staticIngress, "Static Ingress", "")
-        KubernetesSvc(key,"Keycloack", "")
+        KubernetesSvc(key,"Keycloak", "")
         KubernetesSvc(mongo, "Mongo", "")
         KubernetesSvc(minio, "Minio", "")
     }

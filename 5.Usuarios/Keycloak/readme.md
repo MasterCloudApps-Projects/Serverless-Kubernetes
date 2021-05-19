@@ -27,7 +27,7 @@ Para facilitar la prueba hemos configurado y exportado un "realm" y vamos a proc
 
 ### Secure Static website
 
-![Secure ingress ](/out/Keycloack/simple-ingress/simple-ingress/simple-ingress.png)
+![Secure ingress ](/out/Keycloak/simple-ingress/simple-ingress/simple-ingress.png)
 
 En este ejemplo partimos del despliegue de un [sitio web estático con minio](/2.GestionArchivos/minio/readme.md#despliegue-de-un-sitio-estático)
 

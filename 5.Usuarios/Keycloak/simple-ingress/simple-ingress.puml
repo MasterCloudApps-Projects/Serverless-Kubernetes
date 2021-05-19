@@ -31,7 +31,7 @@ Cluster_Boundary(cluster, "Kubernetes Cluster") {
     Namespace_Boundary(default, "default") {
         KubernetesIng(ingress, "API Gateway", "")
         KubernetesSvc(minio, "Minio", "")
-        KubernetesSvc(key,"Keycloack", "")
+        KubernetesSvc(key,"Keycloak", "")
         KubernetesSvc(o2p, "oauth2-proxy", "")
     }
 }

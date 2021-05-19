@@ -17,7 +17,6 @@
     mc mirror ./faas-forecast/dist minio-tfm/static-site
     ```
 
-<!-- TODO: Refactorizar ingress con la v1 -->
 1. Desplegamos la configuración de ingress
 
     ```shell

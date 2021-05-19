@@ -77,13 +77,13 @@ instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite
 En esta sección vamos a instalar Keycloak para la gestión de usuarios dentro del ecosistema kubernetes, como alternativa a los sistemas de identidad y acceso de los proveedores de cloud,
 además vamos a implementar varios ejemplos de cómo integrarlos en las funciones OpenFaaS que hemos desarrollado anteriormente.
 
-- [ ] [Keycloak](/5.Usuarios/Keycloack/readme.md)
+- [ ] [Keycloak](/5.Usuarios/Keycloak/readme.md)
 
 ## Aplicación de Ejemplo
 
 Para terminar hemos desarrollado una pequeña aplicación de ejemplo donde ponemos en común alguno de los servicios que hemos probado anteriormente.
 
-- [ ] [App](/6.app/readme.md)
+- [X] [App](/6.app/readme.md)
 
 ## Next steps
 

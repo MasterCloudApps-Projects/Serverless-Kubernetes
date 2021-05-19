@@ -29,7 +29,7 @@ left to right direction
 Cluster_Boundary(cluster, "Kubernetes Cluster") {
     
     Namespace_Boundary(default, "default") {
-        KubernetesSvc(key,"Keycloack", "")
+        KubernetesSvc(key,"Keycloak", "")
     }
 
     Namespace_Boundary(nsfn, "openfaas-fn") {
