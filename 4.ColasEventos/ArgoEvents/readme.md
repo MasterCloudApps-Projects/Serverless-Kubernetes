@@ -2,13 +2,13 @@
 
 ![Argo Events](https://raw.githubusercontent.com/argoproj/argo-events/master/docs/assets/argo-events-top-level.png)
 
-En este ejemplo vamos a despleagar ArgoEvents y usar un "event-source" de tipo webhook, para ejecutar una función OpenFaas a través de un sensor
+En este ejemplo vamos a desplegar ArgoEvents y usar un "event-source" de tipo webhook, para ejecutar una función OpenFaaS a través de un sensor
 
 ## Prerequisitos
 
 - [Instalación Básica de MicroK8s](/Microk8s.md)
-- [OpenFaas instalado](/1.faas/openFaas/install.md)
-- [OpenFaas cli instalado y configurado](/1.faas/openFaas/readme.md#cli)
+- [OpenFaaS instalado](/1.faas/OpenFaaS/install.md)
+- [OpenFaaS cli instalado y configurado](/1.faas/OpenFaaS/readme.md#cli)
 
 ## Instalar ArgoEvents
 
@@ -38,13 +38,13 @@ Desplegar un event-source de tipo webhook
 kubectl -n argo-events apply -f event-source.yaml
 ```
 
-Desplegar una función OpenFaas de ejemplo
+Desplegar una función OpenFaaS de ejemplo
 
 ```bash
 faas-cli deploy -f https://raw.githubusercontent.com/MasterCloudApps-Projects/Serverless-Kubernetes/main/faas/openFaas/examples/hello-world.ym
 ```
 
-Desplegar un sensor con un triger http a la función OpenFaas
+Desplegar un sensor con un triger http a la función OpenFaaS
 
 ```sh
 kubectl -n argo-events apply -f sensor.yaml

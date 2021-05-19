@@ -1,10 +1,8 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://192.168.0.100:31112
 functions:
   nats-publish:
     lang: node12
     handler: ./nats-publish
     image: oillescas/nats-publish:latest
-

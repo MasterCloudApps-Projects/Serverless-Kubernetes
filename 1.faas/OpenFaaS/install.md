@@ -31,7 +31,7 @@ kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-password="$PASSWORD"
 ```
 
-- Desplegamos openfaas
+- Desplegamos OpenFaaS
 
 ```shell
 cd faas-netes && \
@@ -39,7 +39,7 @@ kubectl apply -f ./yaml
 ```
 
 - y finalmente comprobamos la instalación
-    OpenFaaS despliega un servicio llamado gateway-external que expone un node port y por tanto podemos acceder a el desde la ip de nuesta maquina virtual.
+    OpenFaaS despliega un servicio llamado gateway-external que expone un node port y por tanto podemos acceder a el desde la ip de nuestra maquina virtual.
 
     ```bash
     kubectl -n openfaas get service/gateway-external
@@ -47,4 +47,4 @@ kubectl apply -f ./yaml
     gateway-external   NodePort   10.152.183.80   <none>        8080:31112/TCP   83d
     ```
 
-    y ya podemos acceder a ui de openfaas usando el usuario admin y la pasword que generamos antes <http://192.168.0.100:31112>
+    y ya podemos acceder a ui de OpenFaaS usando el usuario admin y la pasword que generamos antes <http://192.168.0.100:31112>

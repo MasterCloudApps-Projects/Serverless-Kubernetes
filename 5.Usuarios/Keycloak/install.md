@@ -6,13 +6,13 @@
 
 ## Pasos
 
-Instalamos keycloack.
+Instalamos Keycloak.
 
 ```sh
 kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak.yaml
 ```
 
-### configuramos un Ingress para acceder a la web de keycloack
+### configuramos un Ingress para acceder a la web de keycloak
 
 ```sh
 kubectl apply -f keycloak-ingress.yaml

@@ -1,6 +1,5 @@
 # Examples
 
-
 ## Crud mongo
 
 Deploy mongo server

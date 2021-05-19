@@ -2,7 +2,7 @@
 
 ![Master Cloud apps ](./out/masterCloudApps.png)
 
-Este repositorio guarda la documentación y pruebas realizadas para el TFM del 
+Este repositorio guarda la documentación y pruebas realizadas para el TFM del
 "[Máster Cloud Apps. Desarrollo y despliegue de aplicaciones en la nube](https://www.codeurjc.es/mastercloudapps/)" de la Universidad Rey Juan Carlos.
 
 Este TFM consiste en el estudio de las alternativas en Kubernetes a los servicios Serverless
@@ -59,10 +59,10 @@ en este trabajo vamos a instalar y probar 2 de ellos, el operador de MongoDB de 
 | [SNS](https://aws.amazon.com/es/sns/)                  | [Queue Storage](https://azure.microsoft.com/es-es/services/storage/queues/) |                                                       |
 | [Event Bridge](https://aws.amazon.com/es/eventbridge/) | [Event Grid](https://azure.microsoft.com/es-es/services/event-grid/)        |                                                       |
 
-Hasta ahora las pruebas que hemos hecho han lanzado las funciones ante una peticion http
+Hasta ahora las pruebas que hemos hecho han lanzado las funciones ante una petición http
 en esta sección vamos a comprobar com podemos ejecutar estas funciones por otros mecanismos.
-Concretamente probaremos los sistemas de colas integradas dentro de Knative y OpenFaas y también
-instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite ejecutar entre otras cosas funciones OpenFaas.
+Concretamente probaremos los sistemas de colas integradas dentro de Knative y OpenFaaS y también
+instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite ejecutar entre otras cosas funciones OpenFaaS.
 
 - [ ] [Knative](/4.ColasEventos/Knative/events.md)
 - [ ] [OpenFaaS](/4.ColasEventos/OpenFaaS/events.md)
@@ -75,7 +75,7 @@ instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite
 | [cognito](https://aws.amazon.com/es/cognito/) | [Active Directory B2C](https://azure.microsoft.com/es-es/services/active-directory/external-identities/b2c/) | [Cloud IAM](https://cloud.google.com/iam) |
 
 En esta sección vamos a instalar Keycloak para la gestión de usuarios dentro del ecosistema kubernetes, como alternativa a los sistemas de identidad y acceso de los proveedores de cloud,
-además vamos a implementar varios ejemplos de cómo integrarlos en las funciones OpenFaas que hemos desarrollado anteriormente.
+además vamos a implementar varios ejemplos de cómo integrarlos en las funciones OpenFaaS que hemos desarrollado anteriormente.
 
 - [ ] [Keycloak](/5.Usuarios/Keycloack/readme.md)
 
@@ -95,7 +95,7 @@ Para terminar hemos desarrollado una pequeña aplicación de ejemplo donde ponem
   - [Argo Workflows](https://argoproj.github.io/projects/argo)
   - [Faas Flows](https://github.com/s8sg/faas-flow)
 - analyze and test CI/CD in kubernetes faas
-  - [openfaas cloud](https://github.com/openfaas/openfaas-cloud)
+  - [OpenFaaS cloud](https://github.com/openfaas/openfaas-cloud)
   - [ci/cd for knative with concourse](https://medium.com/aptomi/ci-cd-for-knative-serverless-apps-on-kubernetes-with-concourse-54bafef51767)
 - Othes tools
   - [OpenFaaS Ingress Operator](https://github.com/openfaas/ingress-operator)

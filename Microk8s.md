@@ -1,7 +1,7 @@
 # Instalar microk8s
 
-Para que las pruebas sean lo mas homogeneas para todos los sistemas operativos
-las instrucciones de instalacion del cluster microk8s se especifica la creación de una maquina virtual
+Para que las pruebas sean lo mas homogéneas para todos los sistemas operativos
+las instrucciones de instalación del cluster microk8s se especifica la creación de una maquina virtual
 con multipass, aunque no es necesario en linux.
 
 En las ultimas versiones de microk8s no es necesario utilizar multipass ya que en entornos distintos a linux
@@ -20,7 +20,7 @@ para tener mas control de las mismas.
 multipass launch --mem 10G --cpus 6 --disk 20G --name serverlessk8s
 ```
 
-## Intalar microk8s en la maquina virtual
+## Instalar microk8s en la maquina virtual
 
 Acceder a la vm
 
@@ -39,7 +39,7 @@ sudo chown -f -R ubuntu ~/.kube
 
 Después de cambiar los permisos es necesario salir y volver a entrar en la Bash de la maquina virtual para que estos tengan efecto.
 
-## Habilitar addons basicos
+## Habilitar addons básicos
 
 ```Bash
 microk8s enable dns dashboard registry ingress prometheus

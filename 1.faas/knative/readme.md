@@ -4,7 +4,7 @@
 <!-- TODO  añadir imagen knative-->
 
 En esta sección vamos a instalar y probar Knative, ademas de desplegar Knative vamos a desplegar una función que nos servirá un API REST.
-[Google clod run](https://cloud.google.com/run/) esta basado en Knative.
+[Google cloud run](https://cloud.google.com/run/) esta basado en Knative.
 
 - [Documentación oficial](https://knative.dev/)
 
@@ -21,6 +21,8 @@ El desarrollo en Knative es simplemente montar un contenedor Docker con cualquie
 ### REST api
 
 En este caso hemos creado una pequeña api REST con NODE simulando la base de datos en memoria.
+
+- [Código](/Examples/knative/REST)
 
 #### Despliegue
 

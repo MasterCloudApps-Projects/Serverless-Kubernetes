@@ -42,11 +42,12 @@ Para probar este cluster de MongoDb vamos a lanzar un pod dentro de kubernetes c
 kubectl run -i --rm --tty percona-client --namespace=default --image=percona/percona-server-mongodb:4.0 --restart=Never -- bash -il
 ```
 
-La url del servicio MongoDb se construye a partir del nombre del cluster MongoDb, en este caso `my-mongodb` y el replica set  `rs0`, en este caso la url del servicio quedaría de la siguiente manera: 
+La url del servicio MongoDb se construye a partir del nombre del cluster MongoDb, en este caso `my-mongodb` y el replica set  `rs0`, en este caso la url del servicio quedaría de la siguiente manera:
 
 my-mongodb-rs0.default.svc.cluster.local
 
 ```shell
+# mongo "mongodb+srv://<Admin user>:< Admin password>@my-mongodb-rs0.default.svc.cluster.local/admin?replicaSet=rs0&ssl=false"
 mongo "mongodb+srv://userAdmin:MBGFChrVW2F4zsN6ee@my-mongodb-rs0.default.svc.cluster.local/admin?replicaSet=rs0&ssl=false"
 ```
 
@@ -67,12 +68,14 @@ rs0:PRIMARY> db.createUser({
 
 ## Ejemplos
 
-### REST api postgresql con openfaas
+### REST api postgresql con OpenFaaS
 
 En este ejemplo hemos creado un ejemplo de conexión a base de datos, una pequeña api para gestión de dispositivos.
 
 - [Descriptor](/Examples/openfaas/crud-postgre/stack.yml)
 - [Código](/Examples/openfaas/crud-postgre/device-status)
+
+<!-- TODO notas de instalación y secrets -->
 
 ## Escalado
 

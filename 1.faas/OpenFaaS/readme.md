@@ -1,8 +1,8 @@
-# OpenFaas
+# OpenFaaS
 
-![openfaas](https://blog.alexellis.io/content/images/2017/08/faas_side.png)
+![OpenFaaS](https://blog.alexellis.io/content/images/2017/08/faas_side.png)
 
-En esta sección instalaremos y probaremos OpenFaas y su cli. También veremos algunos ejemplos de funciones y como los integramos con otros de los servicios Serverless
+En esta sección instalaremos y probaremos OpenFaaS y su cli. También veremos algunos ejemplos de funciones y como los integramos con otros de los servicios Serverless
 
 - [Documentación oficial](https://www.openfaas.com/)
 
@@ -29,7 +29,7 @@ faas login --password <password>
 
 ## Desarrollo
 
-El desarrollo de las funciones en OpenFaas se basan en templates. Para comenzar debemos ejecutar la siguiente instrucción para crear una nueva función:
+El desarrollo de las funciones en OpenFaaS se basan en templates. Para comenzar debemos ejecutar la siguiente instrucción para crear una nueva función:
 
 ```bash
 faas new --lang node12 hello-world
@@ -129,7 +129,7 @@ faas-cli deploy -f <name_of_faas.yaml>
 
 Para modificar y probar las modificaciones debes estar autenticado en DockerHub y modificar el archivo .yml cambiando mi usuario de DokerHub (oillescas) por el tuyo.
 
-También necesitas descargar los templates OpenFaas con los siguientes comandos.
+También necesitas descargar los templates OpenFaaS con los siguientes comandos.
 
 ```bash
 faas template pull
@@ -152,8 +152,8 @@ Ejemplo básico de función http en java:
 
 ## Monitorización
 
-Lan instalación de open faas deja instalado en en namespace openfaas un servicio de prometheus que monitoriza la instalación.
-Y en microk8s en el Namespace monitoring tenemos un servicio de grafana, con los dashboard del propio k8s, y vamos a configurar un dashboard para openfaas.
+Lan instalación de open faas deja instalado en en namespace OpenFaaS un servicio de prometheus que monitoriza la instalación.
+Y en microk8s en el Namespace monitoring tenemos un servicio de grafana, con los dashboard del propio k8s, y vamos a configurar un dashboard para OpenFaaS.
 
 Primeramente tenemos que acceder a grafana, podremos hacer un proxy al puerto, pero por comodidad vamos a exponer el servicio con un ingress.
 
@@ -164,7 +164,7 @@ kubectl apply -f ingress-grafana.yml
 accedes al dominio de ingress <http://grafana.192.168.0.100.nip.io/> con usuario/password admin/admin después del primer login deberás cambiar el password.
 ![login](../../out/capturas/LoginGrafana.png)
 
-Una vez logado añadimos el prometeus del namespace openfaas como data source.
+Una vez logado añadimos el prometeus del namespace OpenFaaS como data source.
 
 - URL <http://prometheus.openfaas.svc:9090>
 

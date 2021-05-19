@@ -11,3 +11,5 @@ Guía de instalación paso por paso del [operador de MongoDb de Percona](https:/
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/percona/percona-server-mongodb-operator/v1.7.0/deploy/bundle.yaml
 ```
+
+<!-- TODO validar que la instalación se ha realizado correctamente -->

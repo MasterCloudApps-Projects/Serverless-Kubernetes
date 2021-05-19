@@ -19,7 +19,7 @@
 <!-- userAdmin -->
 <!-- rkafAtyf9lQriPpye -->
 
-1. Creamos el usuario de base de datos para las funciones openfaas
+1. Creamos el usuario de base de datos para las funciones OpenFaaS
 
    ```shell
    kubectl run -i --rm --tty percona-client --namespace=openfaas-fn --image=percona/percona-server-mongodb:4.0 --restart=Never -- bash -il
