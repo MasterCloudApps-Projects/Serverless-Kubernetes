@@ -9,6 +9,9 @@ metadata:
     nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
     nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
 spec:
+  tls:
+  - hosts:
+    - miniostatic.192.168.64.4.nip.io
   # ingressClassName: nginx
   rules:
   - host: miniostatic.192.168.64.4.nip.io
@@ -29,6 +32,9 @@ kind: Ingress
 metadata:
   name: oauth2-proxy
 spec:
+  tls:
+  - hosts:
+    - miniostatic.192.168.64.4.nip.io
   # ingressClassName: nginx
   rules:
   - host: miniostatic.192.168.64.4.nip.io
