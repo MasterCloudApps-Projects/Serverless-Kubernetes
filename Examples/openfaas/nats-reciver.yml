@@ -10,4 +10,3 @@ functions:
       topic: "nats-test"
     environment:
       RAW_BODY: 'true'
-

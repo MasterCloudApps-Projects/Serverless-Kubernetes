@@ -63,10 +63,48 @@ postgres=# \l
 
 ### REST api postgresql con OpenFaaS
 
-En este ejemplo hemos creado un ejemplo de conexión a base de datos, una pequeña api para gestión de dispositivos.
+En este ejemplo partiendo del cluster que hemos creado anteriormente creamos una pequeña api para gestión de dispositivos.
 
 - [Descriptor](/Examples/openfaas/crud-postgre.yml)
 - [Código](/Examples/openfaas/crud-postgre/)
+
+Es necesario crear las tablas en la base de datos para poder lanzar las consultas, para esto podemos usar el contenedo `bitnami/postgresql:11.7.0-debian-10-r9` que hemos usado anteriormente para lanzar la creación de las tablas.
+
+```sh
+export PGPASSWORD=$(kubectl get secret zalando.acid-minimal-cluster.credentials.postgresql.acid.zalan.do -o 'jsonpath={.data.password}' | base64 -d)
+
+kubectl run pgsql-postgresql-client --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:11.7.0-debian-10-r9 --env="PGPASSWORD=$PGPASSWORD" --command -- psql --host acid-minimal-cluster -U zalando
+```
+
+y lanzamos las siguientes sentencias en la shell de postgresql
+
+```sql
+-- Each device
+CREATE TABLE device (
+    device_id          INT GENERATED ALWAYS AS IDENTITY,
+    device_key         text NOT NULL,
+    device_name        text NOT NULL,
+    device_desc        text NOT NULL,
+    device_location    point NOT NULL,
+    created_at         timestamp with time zone default now()
+);
+
+-- Set the primary key for device
+ALTER TABLE device ADD CONSTRAINT device_id_key PRIMARY KEY(device_id);
+
+-- Status of the device
+CREATE TABLE device_status (
+    status_id          INT GENERATED ALWAYS AS IDENTITY,
+    device_id          integer NOT NULL references device(device_id),
+    uptime             bigint NOT NULL,
+    temperature_c      int NOT NULL,
+    created_at         timestamp with time zone default now()
+);
+
+-- Set the primary key for device_status
+ALTER TABLE device_status ADD CONSTRAINT device_status_key PRIMARY KEY(status_id);
+
+```
 
 Para poder desplegarlo necesitamos crear los secretos para conectar a la bbdd.
 
@@ -77,3 +115,7 @@ kubectl create secret generic -n openfaas-fn db \
   --from-literal db-username="zalando" \
   --from-literal db-password="$PGPASSWORD" 
 ```
+
+## links
+
+- <https://stackoverflow.com/questions/58449442/create-or-update-existing-postgres-db-container-through-kubernetes-job>

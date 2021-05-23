@@ -1,0 +1,47 @@
+@startuml crud-mongo
+
+footer Kubernetes Plant-UML
+' scale max 1024 width
+
+skinparam nodesep 30
+skinparam ranksep 30
+
+' Azure
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+
+!includeurl KubernetesPuml/kubernetes_Common.puml
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+!includeurl KubernetesPuml/OSS/KubernetesSvc.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+
+left to right direction
+
+' Kubernetes Components
+Cluster_Boundary(cluster, "Kubernetes Cluster") {
+    Namespace_Boundary(default, "default") {
+        KubernetesSvc(mongo, "Mongo", "")
+    }
+
+    Namespace_Boundary(nsfn, "openfaas-fn") {
+        KubernetesSvc(fngf, "[function]\ncrud-mongo","")
+    }
+
+    Namespace_Boundary(ns, "openfaas") {
+        KubernetesSvc(ofg, "openfaas Gateway", "")
+    }
+
+}
+
+'API
+Rel(ofg, fngf, " ", "1")
+Rel(fngf, mongo, " ", "2" )
+
+
+@enduml

@@ -24,7 +24,7 @@ Desplegar los componentes de Argo Events, SA, ClusterRoles, Sensor Controller, E
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-events/stable/manifests/install.yaml
 ```
 
-Desplegar un eventbus,
+Desplegar un eventbus
 
 ```sh
 kubectl apply -n argo-events -f https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/eventbus/native.yaml

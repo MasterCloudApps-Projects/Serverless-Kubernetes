@@ -70,6 +70,7 @@ Sirve la pagina web estática que hace uso de las funciones OpenFaaS descritas a
 - Despliegue de los componentes kubernetes
 
   ```sh
+  kubectl apply -f kube/cron-connector.yaml
   kubectl apply -f kube/connector-dep.yaml
   kubectl apply -f kube/ingress.yaml
   ```
