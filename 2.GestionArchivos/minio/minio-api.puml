@@ -1,4 +1,4 @@
-@startuml simple-app
+@startuml Api minio
 
 footer Kubernetes Plant-UML
 ' scale max 1024 width
@@ -22,23 +22,30 @@ skinparam ranksep 30
 !includeurl KubernetesPuml/OSS/KubernetesIng.puml
 
 
-
 actor "User" as userAlias
 left to right direction
 
 ' Kubernetes Components
 Cluster_Boundary(cluster, "Kubernetes Cluster") {
     Namespace_Boundary(default, "default") {
-        KubernetesIng(ingress, "Ingress","")
-        KubernetesSvc(minio, "Minio", "")
+        KubernetesSvc(mongo, "Minio", "")
     }
+
+    Namespace_Boundary(nsfn, "openfaas-fn") {
+        KubernetesSvc(fngf, "[function]\nminio-api","")
+    }
+
+    Namespace_Boundary(ns, "openfaas") {
+        KubernetesSvc(ofg, "openfaas Gateway", "")
+        KubernetesIng(ingress, "API Gateway", "")
+    }
+
 }
 
-' 'Static Web
-Rel(userAlias, ingress, "Load Web", "0")
-Rel(ingress, minio, "Static web", "0")
-
-
-
+'API
+Rel(userAlias, ingress, " ", "0")
+Rel(ingress, ofg, " ", "1")
+Rel(ofg, fngf, " ", "2")
+Rel(fngf, mongo, " ", "3" )
 
 @enduml

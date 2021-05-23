@@ -9,7 +9,7 @@ export class DataManager extends LitElement {
   }
     constructor(){
       super();
-      this.url = 'https://miniostatic.192.168.0.100.nip.io/api/get-forecast'
+      this.url = '/api/get-forecast'
     }
 
     getForecast() {

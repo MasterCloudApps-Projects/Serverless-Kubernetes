@@ -19,7 +19,7 @@ spec:
     serverHost: monitoring-service
   replsets:
   - name: rs0
-    size: 3
+    size: 2
     affinity:
       antiAffinityTopologyKey: "none"
     podDisruptionBudget:
@@ -31,7 +31,7 @@ spec:
       enabled: false
       size: 1
       affinity:
-       antiAffinityTopologyKey: "kubernetes.io/hostname"
+        antiAffinityTopologyKey: "kubernetes.io/hostname"
     resources:
       limits:
         cpu: "300m"

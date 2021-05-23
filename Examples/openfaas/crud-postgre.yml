@@ -1,0 +1,14 @@
+version: 1.0
+provider:
+  name: openfaas
+functions:
+  crud-postgre:
+    lang: node12
+    handler: ./crud-postgre
+    image: oillescas/crud-postgre:latest
+    environment:
+      db_host: acid-minimal-cluster-repl.default.svc.cluster.local
+      db_port: 5432
+      db_name: foo
+    secrets:
+      - db

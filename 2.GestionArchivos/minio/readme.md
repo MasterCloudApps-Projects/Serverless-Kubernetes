@@ -1,6 +1,6 @@
 # Minio
 
-![Minio](https://min.io/resources/img/logo/MINIO_wordmark.png)
+[![MinIO](https://raw.githubusercontent.com/minio/minio/master/.github/logo.svg?sanitize=true)](https://min.io)
 
 Al no usar servidores es necesario un servicio que se encargue de gestionar los archivos necesarios para una aplicación serverless. Como alternativa a este servicio vamos a instalar y probar Minio.
 
@@ -27,7 +27,8 @@ Dentro de los posibles usos que se dan normalmente al almacenamiento de ficheros
 
     ```shell
     # mc config host add minio-tfm http://<VirtualMachine-IP>:<External-Port> YOURACCESSKEY YOURSECRETKEY S3v4
-    mc config host add minio-tfm http://192.168.64.12:31131 YOURACCESSKEY YOURSECRETKEY
+    
+    mc config host add minio-tfm http://100.96.192.102:31672 YOURACCESSKEY YOURSECRETKEY
     ```
 
 1. Creamos y configuramos un bucket
@@ -57,15 +58,19 @@ Podemos visitar el sitio en:
 
 En este ejemplo hemos expuesto la gestión de archivos de minio via un api REST hace uso la la template [node12-files](/1.faas/openFaas/readme.md#node12-files) para poder recibir y enviar archivos a Minio.
 
+Es necesario descargar las custom templates para poder lanzarlo
+
+```sh
+faas template pull https://github.com/MasterCloudApps-Projects/Serverless-Kubernetes-openfass
+```
+
 - [Descriptor](/Examples/openfaas/minio-api.yml)
 - [Código](/Examples/openfaas/minio-api)
 
 Para instalarlo necesitamos crear el secreto con las claves de acceso a minio
 
-<!-- TODO explicar como instalar -->
-
 ```sh
-kubectl 
+   kubectl create secret generic openfaas-minio --from-literal=acceskey=YOURACCESSKEY --from-literal=secretkey=YOURSECRETKEY -n openfaas-fn
 ```
 
 ## Links

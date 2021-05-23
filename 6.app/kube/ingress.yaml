@@ -8,7 +8,7 @@ metadata:
 spec:
   # ingressClassName: nginx
   rules:
-  - host: miniostatic.192.168.0.100.nip.io
+  - host: miniostatic.100.96.192.102.nip.io
     http:
       paths:
       - path: /api/(get-forecast)
@@ -31,7 +31,7 @@ metadata:
 spec:
   # ingressClassName: nginx
   rules:
-  - host: miniostatic.192.168.0.100.nip.io
+  - host: miniostatic.100.96.192.102.nip.io
     http:
       paths:
       - path: /(.*)

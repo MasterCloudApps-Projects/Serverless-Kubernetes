@@ -68,14 +68,16 @@ rs0:PRIMARY> db.createUser({
 
 ## Ejemplos
 
-### REST api postgresql con OpenFaaS
+### REST api
 
-En este ejemplo hemos creado un ejemplo de conexión a base de datos, una pequeña api para gestión de dispositivos.
+En este ejemplo hemos creado un ejemplos de conexión a base de datos, un crud contra mongo.
 
-- [Descriptor](/Examples/openfaas/crud-postgre/stack.yml)
-- [Código](/Examples/openfaas/crud-postgre/device-status)
+- [Descriptor](/Examples/openfaas/crud-mongo.yml)
+- [Código](/Examples/openfaas/crud-mongo)
 
-<!-- TODO notas de instalación y secrets -->
+```sh
+kubectl create secret generic db --from-literal=username=myApp --from-literal=password=myAppPassword -n openfaas-fn
+```
 
 ## Escalado
 

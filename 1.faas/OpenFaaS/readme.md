@@ -131,7 +131,7 @@ Para modificar y probar las modificaciones debes estar autenticado en DockerHub 
 
 También necesitas descargar los templates OpenFaaS con los siguientes comandos.
 
-```bash
+```sh
 faas template pull
 faas template pull https://github.com/MasterCloudApps-Projects/Serverless-Kubernetes-openfass
 ```

@@ -67,5 +67,8 @@ function initPool() {
     database: process.env["db_name"],
     password: fs.readFileSync("/var/openfaas/secrets/db-password", "utf-8"),
     port: process.env["db_port"],
+    ssl : {
+        rejectUnauthorized: false
+    }
   });
  }

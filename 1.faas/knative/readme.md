@@ -1,7 +1,6 @@
 # Knative
 
 ![knative](https://github.com/knative/docs/raw/main/background.png)
-<!-- TODO  añadir imagen knative-->
 
 En esta sección vamos a instalar y probar Knative, ademas de desplegar Knative vamos a desplegar una función que nos servirá un API REST.
 [Google cloud run](https://cloud.google.com/run/) esta basado en Knative.
