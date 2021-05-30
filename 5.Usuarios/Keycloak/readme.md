@@ -45,7 +45,7 @@ A partir de este punto ya podríamos acceder al sitio web
 
 ### Secure OpenFaaS function
 
-![Load Web](/uml/5.Usuarios/Keycloak/OpenFaaS/secure-OpenFaaS/secure-OpenFaaS.png)
+![Load Web](/uml/5.Usuarios/Keycloak/OpenFaaS/secure-openfaas/secure-openfaas.png)
 
 En este ejemplo vamos a segurizar el gateway de OpenFaaS con lo que así segurizariamos cualquier función OpenFaaS.
 
