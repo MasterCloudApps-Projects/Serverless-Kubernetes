@@ -2,9 +2,9 @@
 
 ![alt](https://www.keycloak.org/resources/images/keycloak_logo_480x108.png)
 
-## Install
+## Instalación
 
-- [Install keycloak](install.md)
+- [Instalación de keycloak](install.md)
 
 ## Importar realm
 
