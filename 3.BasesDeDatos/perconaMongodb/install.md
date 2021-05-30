@@ -12,7 +12,7 @@ Guía de instalación paso por paso del [operador de MongoDb de Percona](https:/
 kubectl apply -f https://raw.githubusercontent.com/percona/percona-server-mongodb-operator/v1.7.0/deploy/bundle.yaml
 ```
 
-Podemos comporobar que el operador esta funcionando cuando su pod esta `Running`
+Podemos comprobar que el operador esta funcionando cuando su pod esta `Running`
 
 ```sh
 kubectl get pod --selector=name=percona-server-mongodb-operator

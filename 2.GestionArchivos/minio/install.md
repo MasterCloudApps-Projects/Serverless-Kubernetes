@@ -39,7 +39,7 @@ Disk usage:     7.1G out of 19.2G
 Memory usage:   2.7G out of 9.7G
 ```
 
-Podemos visitar la web de minio visitando la ip del cluster con el puerto exerno
+Podemos visitar la web de minio visitando la ip del cluster con el puerto externo
 
 - <http://192.168.64.12:31131>
 

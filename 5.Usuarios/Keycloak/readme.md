@@ -27,7 +27,7 @@ Para facilitar la prueba hemos configurado y exportado un "realm" y vamos a proc
 
 ### Secure Static website
 
-![Secure ingress ](/out/Keycloak/simple-ingress/simple-ingress/simple-ingress.png)
+![Secure ingress ](/uml/5.Usuarios/Keycloak/simple-ingress/simple-ingress/simple-ingress.png)
 
 En este ejemplo partimos del despliegue de un [sitio web estático con minio](/2.GestionArchivos/minio/readme.md#despliegue-de-un-sitio-estático)
 
@@ -45,7 +45,7 @@ A partir de este punto ya podríamos acceder al sitio web
 
 ### Secure OpenFaaS function
 
-![Load Web](/out/Keycloak/OpenFaaS/secure-OpenFaaS/secure-OpenFaaS.png)
+![Load Web](/uml/5.Usuarios/Keycloak/OpenFaaS/secure-OpenFaaS/secure-OpenFaaS.png)
 
 En este ejemplo vamos a segurizar el gateway de OpenFaaS con lo que así segurizariamos cualquier función OpenFaaS.
 

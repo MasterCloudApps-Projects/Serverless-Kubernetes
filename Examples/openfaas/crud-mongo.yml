@@ -1,7 +1,6 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://192.168.64.9:31112
 functions:
   get:
     lang: node10-express
@@ -12,4 +11,3 @@ functions:
       db_name: openfaas
     secrets:
       - openfaas-mongodb
-

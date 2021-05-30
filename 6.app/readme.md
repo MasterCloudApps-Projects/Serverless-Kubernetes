@@ -1,6 +1,6 @@
 # Ejemplo de aplicación completa
 
-![Docs](../out/app/docs/uml/full-app/full-app.png)
+![Docs](/uml/6.app/docs/uml/full-app/full-app.png)
 [plant-uml](docs/uml/full-app.puml)
 
 ## Funciones
@@ -11,7 +11,7 @@ Esta función descarga via http la previsión meteorológica desde la web de Aem
 
 Se lanza automáticamente según la configuración del cron-connector
 
-![Docs](../out/app/docs/uml/download-forecast/download-forecast.png)
+![Docs](/uml/6.app/docs/uml/download-forecast/download-forecast.png)
 
 - [plant-uml](docs/uml/download-forecast.puml)
 - [Código](functions/download-forecast)
@@ -22,7 +22,7 @@ Esta función recibe un evento de minio via una cola nats cada ver que un nuevo 
 
 Cuando la función recibe el evento descarga el archivo desde minio, transforma la información y la guarda la la base de datos mongodb.
 
-![Docs](../out/app/docs/uml/parse-forecast/parse-forecast.png)
+![Docs](/uml/6.app/docs/uml/parse-forecast/parse-forecast.png)
 
 - [plant-uml](docs/uml/parse-forecast.puml)
 - [Código](functions/parse-forecastnats)
@@ -31,7 +31,7 @@ Cuando la función recibe el evento descarga el archivo desde minio, transforma 
 
 Esta función devuelve los datos de la predicción meteorológica para una localidad via http.
 
-![Docs](../out/app/docs/uml/get-forecast/get-forecast.png)
+![Docs](/uml/6.app/docs/uml/get-forecast/get-forecast.png)
 
 - [plant-uml](docs/uml/get-forecast.puml)
 - [Código](functions/get-forecast)
@@ -40,7 +40,7 @@ Esta función devuelve los datos de la predicción meteorológica para una local
 
 Sirve la pagina web estática que hace uso de las funciones OpenFaaS descritas anteriormente.
 
-![Docs](../out/app/docs/uml/static-site/static-site.png)
+![Docs](/uml/6.app/docs/uml/static-site/static-site.png)
 
 - [plant-uml](docs/uml/static-site.puml)
 - [Código](faas-forecast)

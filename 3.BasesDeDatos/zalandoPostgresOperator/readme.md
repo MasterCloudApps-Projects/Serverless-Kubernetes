@@ -25,7 +25,7 @@ kubectl create -f minimal-postgres-manifest.yaml
 
 ## Probamos el cluster
 
-En este caso el operador de PostgreSql crea una serie de secretos, uno por cada usuario que creamos en el despliegue del cluster.  Recuperamos pasword para el usuario postgres (administrador) de nuestra base de datos.
+En este caso el operador de PostgreSql crea una serie de secretos, uno por cada usuario que creamos en el despliegue del cluster.  Recuperamos pasword para el usuario PostgreSQL (administrador) de nuestra base de datos.
 
 ```shell
 export PGPASSWORD=$(kubectl get secret postgres.acid-minimal-cluster.credentials.postgresql.acid.zalan.do -o 'jsonpath={.data.password}' | base64 -d)
@@ -68,7 +68,7 @@ En este ejemplo partiendo del cluster que hemos creado anteriormente creamos una
 - [Descriptor](/Examples/openfaas/crud-postgre.yml)
 - [Código](/Examples/openfaas/crud-postgre/)
 
-Es necesario crear las tablas en la base de datos para poder lanzar las consultas, para esto podemos usar el contenedo `bitnami/postgresql:11.7.0-debian-10-r9` que hemos usado anteriormente para lanzar la creación de las tablas.
+Es necesario crear las tablas en la base de datos para poder lanzar las consultas, para esto podemos usar el contenedor `bitnami/postgresql:11.7.0-debian-10-r9` que hemos usado anteriormente para lanzar la creación de las tablas.
 
 ```sh
 export PGPASSWORD=$(kubectl get secret zalando.acid-minimal-cluster.credentials.postgresql.acid.zalan.do -o 'jsonpath={.data.password}' | base64 -d)
@@ -106,7 +106,7 @@ ALTER TABLE device_status ADD CONSTRAINT device_status_key PRIMARY KEY(status_id
 
 ```
 
-Para poder desplegarlo necesitamos crear los secretos para conectar a la bbdd.
+Para poder desplegar este ejemplo necesitamos crear los secretos para conectar a la bbdd.
 
 ```sh
 export PGPASSWORD=$(kubectl get secret zalando.acid-minimal-cluster.credentials.postgresql.acid.zalan.do -o 'jsonpath={.data.password}' | base64 -d)

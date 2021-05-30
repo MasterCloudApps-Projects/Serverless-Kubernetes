@@ -41,3 +41,27 @@
     mc event add minio-tfm/forecast arn:minio:sqs:us-east-1:1:nats --suffix .xml --event put
     mc event list minio-tfm/forecast
     ```
+
+## Creamos el secreto para la configuración de minio en las funciones de la
+
+1. Recuperando las keys de acceso
+
+    Para acceder a la web necesitamos las "keys" que el chart de helm ha guardado como un secreto.
+
+    AccessKey
+
+    ```Bash
+    kubectl get secret  my-minio -o 'jsonpath={.data.accesskey}' | base64 -d
+    ```
+
+    SecretKy
+
+    ```Bash
+    kubectl get secret  my-minio -o 'jsonpath={.data.secretkey}' | base64 -d
+    ```
+
+1. Creamos el secreto
+
+    ```sh
+    kubectl create secret generic openfaas-minio --from-literal=acceskey=YOURACCESSKEY --from-literal=secretkey=YOURSECRETKEY -n openfaas-fn
+    ```

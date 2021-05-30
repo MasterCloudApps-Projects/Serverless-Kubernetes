@@ -12,5 +12,3 @@ functions:
       use-ssl: false
     secrets: 
     - openfaas-minio
-
-

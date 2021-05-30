@@ -6,6 +6,8 @@
 
 ## Pasos
 
+Desde la carpeta `/Examples/knative/events` de este repositorio seguimos los siguientes pasos.
+
 ### Despliegue del "broker"
 
 ```bash
@@ -27,7 +29,7 @@ kubectl -n event-example apply hello-consumer.yaml
 kubectl -n event-example apply goodby-consumer.yaml
 ```
 
-validamos que el confumidor se ha creado correctamente.
+validamos que los confumidores se han creado correctamente.
 
 ```bash
 kubectl --namespace event-example get deployments hello-display goodbye-display
@@ -36,6 +38,13 @@ NAME              READY   UP-TO-DATE   AVAILABLE   AGE
 hello-display     1/1     1            1           4h30m
 goodbye-display   1/1     1            1           4h26m
 ```
+
+### Despliegue del "event trigger"
+
+```bash
+kubectl -n event-example apply trigger.yaml
+```
+
 
 Para realizar la prueba nos vamos a conectar al el pod con el siguiente comando:
 

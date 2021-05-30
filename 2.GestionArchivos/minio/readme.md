@@ -16,7 +16,7 @@ Dentro de los posibles usos que se dan normalmente al almacenamiento de ficheros
 
 ### Despliegue de un sitio estático
 
-![Static website](/out/GestionArchivos/simple-app/simple-app.png)
+![Static website](/uml/2.GestionArchivos/minio/simple-app/simple-app.png)
 
 1. Instalar minio client(mc) para el sistema operativo que necesites.
      - [Minio Client](https://github.com/minio/mc)
@@ -58,7 +58,7 @@ Podemos visitar el sitio en:
 
 En este ejemplo hemos expuesto la gestión de archivos de minio via un api REST hace uso la la template [node12-files](/1.faas/openFaas/readme.md#node12-files) para poder recibir y enviar archivos a Minio.
 
-Es necesario descargar las custom templates para poder lanzarlo
+Es necesario descargar las custom templates para poder lanzar este ejemplo.
 
 ```sh
 faas template pull https://github.com/MasterCloudApps-Projects/Serverless-Kubernetes-openfass

@@ -66,7 +66,7 @@ Y probamos el servicio a partir de esta plantilla (desde dentro de la maquina vi
 curl -H "Host: knative-rest.default.example.com" http://[`ip de la maquina virtual`]:[`puerto externo del istio gateway`]
 ```
 
-con los datos que tenemos quedaria la siguiente llamada y respuesta
+con los datos que tenemos quedaría la siguiente llamada y respuesta
 
 ```shell
 curl -H "Host: knative-rest.default.example.com" http://192.168.64.2:31380/users

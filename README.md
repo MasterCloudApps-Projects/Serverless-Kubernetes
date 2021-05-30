@@ -24,8 +24,8 @@ que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 
  En esta sección vamos a instalar y probar varias opciones de faas basadas en Kubernetes. Para intentar sustituir las funciones de proveedor como AWS Lambda o Azure Function.
 
-- [ ] [Knative](/1.faas/knative/readme.md)
-- [ ] [OpenFaaS](/1.faas/OpenFaaS/readme.md)
+- [X] [Knative](/1.faas/knative/readme.md)
+- [X] [OpenFaaS](/1.faas/OpenFaaS/readme.md)
 <!-- - [ ] [Openwisk](/1.faas/openwisk/readme.md) -->
 
 ### Gestión de archivos
@@ -37,7 +37,7 @@ que ofrecen los proveedores de cloud como AWS, Azure o GCP.
 Otro servicio que ofrecen los proveedores de cloud son la gestión y almacenamiento de archivos en este caso vamos a instalar y probar minio,
 que implementa un api compatible con AWS S3 y que posee un operador de Kubernetes que nos permite el autoescalado.
 
-- [ ] [Minio](/2.GestionArchivos/minio/readme.md)
+- [X] [Minio](/2.GestionArchivos/minio/readme.md)
 
 ### Bases de datos
 
@@ -48,8 +48,8 @@ que implementa un api compatible con AWS S3 y que posee un operador de Kubernete
 Las alternativas a las bases de datos administradas por los proveedores de cloud serian los Operadores Kubernetes de bases de datos,
 en este trabajo vamos a instalar y probar 2 de ellos, el operador de MongoDB de Percona y el operador de PostgreSQL de Zalando.
 
-- [ ] [Mongodb operator](/3.BasesDeDatos/perconaMongodb/readme.md)
-- [ ] [Postgresql operator](/3.BasesDeDatos/zalandoPostgresOperator/readme.md)
+- [X] [Mongodb operator](/3.BasesDeDatos/perconaMongodb/readme.md)
+- [X] [Postgresql operator](/3.BasesDeDatos/zalandoPostgresOperator/readme.md)
 
 ### Colas de mensajería y gestión de eventos
 
@@ -64,9 +64,9 @@ en esta sección vamos a comprobar com podemos ejecutar estas funciones por otro
 Concretamente probaremos los sistemas de colas integradas dentro de Knative y OpenFaaS y también
 instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite ejecutar entre otras cosas funciones OpenFaaS.
 
-- [ ] [Knative](/4.ColasEventos/Knative/events.md)
-- [ ] [OpenFaaS](/4.ColasEventos/OpenFaaS/events.md)
-- [ ] [Argo Events](/4.ColasEventos/ArgoEvents/readme.md)
+- [X] [Knative](/4.ColasEventos/Knative/events.md)
+- [X] [OpenFaaS](/4.ColasEventos/OpenFaaS/events.md)
+- [X] [Argo Events](/4.ColasEventos/ArgoEvents/readme.md)
 
 ### Gestión de usuarios
 
@@ -77,7 +77,7 @@ instalaremos y probaremos Argo Events, un orquestador de eventos que nos permite
 En esta sección vamos a instalar Keycloak para la gestión de usuarios dentro del ecosistema kubernetes, como alternativa a los sistemas de identidad y acceso de los proveedores de cloud,
 además vamos a implementar varios ejemplos de cómo integrarlos en las funciones OpenFaaS que hemos desarrollado anteriormente.
 
-- [ ] [Keycloak](/5.Usuarios/Keycloak/readme.md)
+- [X] [Keycloak](/5.Usuarios/Keycloak/readme.md)
 
 ## Aplicación de Ejemplo
 
@@ -85,19 +85,19 @@ Para terminar hemos desarrollado una pequeña aplicación de ejemplo donde ponem
 
 - [X] [App](/6.app/readme.md)
 
-## Next steps
+## Próximos pasos
 
-- Others database operators
+- Otros operadores de bases de datos
   - [MongoDB Enterprise Kubernetes Operator](https://github.com/mongodb/mongodb-enterprise-kubernetes)
   - [Scylla Alternator](https://docs.scylladb.com/using-scylla/alternator/)
-  - [Others](https://operatorhub.io/?category=Database)
-- integrate workflows tools
+  - [Otros](https://operatorhub.io/?category=Database)
+- Herramientas para integrar funciones en workflows
   - [Argo Workflows](https://argoproj.github.io/projects/argo)
   - [Faas Flows](https://github.com/s8sg/faas-flow)
-- analyze and test CI/CD in kubernetes faas
+- Probar herramientas de CI/CD para el despliegue de funciones
   - [OpenFaaS cloud](https://github.com/openfaas/openfaas-cloud)
   - [ci/cd for knative with concourse](https://medium.com/aptomi/ci-cd-for-knative-serverless-apps-on-kubernetes-with-concourse-54bafef51767)
-- Othes tools
+- Otras herramientas
   - [OpenFaaS Ingress Operator](https://github.com/openfaas/ingress-operator)
 
 <!-- TODO remplazar los png de los UML -->
