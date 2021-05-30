@@ -179,7 +179,7 @@ Cuando ya tenemos este nuevo datasource importamos el siguiente dashboard de la 
 - Paso 2
     ![Prometheus data source](../../out/capturas/ImportDashboard2.png)
 - Paso 3
-    ![Prometheus data source](../../out/capturas/ImportDashboard3.png)
+    ![Prometheus data source](../../out/capturas/ImportDashBoard3.png)
 
 Y ya podemos nuestro dashboard.
 
